@@ -59,7 +59,7 @@
 // many solid wires
 
 // Daniel and Jonathan Valvano
-// July 19, 2016
+// September 20, 2016
 
 /* This example accompanies the books
    "Embedded Systems: Introduction to the MSP432 Microcontroller",
@@ -1159,8 +1159,8 @@ static int16_t _height = ST7735_TFTHEIGHT;*/
 
 
 // delay function for testing
-// which delays about 8.1*ulCount cycles
-// ulCount=5901 => 1ms = 5901*8.1cycle/loop/48,000
+// which delays about 6*ulCount cycles
+// ulCount=8000 => 1ms = 8000*6cycle/loop/48,000
 #ifdef __TI_COMPILER_VERSION__
   //Code Composer Studio Code
   void parrotdelay(unsigned long ulCount){
@@ -1180,22 +1180,22 @@ static int16_t _height = ST7735_TFTHEIGHT;*/
 
 #endif
 
-//------------UART0_OutChar------------
+//------------BSP_UART0_OutChar------------
 // Output 8-bit to serial port
 // Input: letter is an 8-bit ASCII character to be transferred
 // Output: none
-void UART0_OutChar(char letter){
+void BSP_UART0_OutChar(char letter){
   while((UCA0IFG&0x02) == 0);
   UCA0TXBUF = letter;
 }
 
-//------------UART0_OutString------------
+//------------BSP_UART0_OutString------------
 // Output String (NULL termination)
 // Input: pointer to a NULL-terminated string to be transferred
 // Output: none
-void UART0_OutString(char *pt){
+void BSP_UART0_OutString(char *pt){
   while(*pt){
-    UART0_OutChar(*pt);
+    BSP_UART0_OutChar(*pt);
     pt++;
   }
 }
@@ -1493,7 +1493,7 @@ void static ST7735_InitR(enum initRFlags option) {
 // Output: none
 void BSP_LCD_Init(void){
   ST7735_InitR(INITR_GREENTAB);
-  UART0_OutString("\n\r**Simulated BSP hardware**\n\r");
+  BSP_UART0_OutString("\n\r**Simulated BSP hardware**\n\r");
 }
 
 
@@ -2301,6 +2301,10 @@ void BSP_Clock_InitFastest(void){
       return;                           // time out error
     }
   }
+  // configure for 2 wait states (minimum for 48 MHz operation) for flash Bank 0
+  FLCTL_BANK0_RDCTL = (FLCTL_BANK0_RDCTL&~0x0000F000)|FLCTL_BANK0_RDCTL_WAIT_2;
+  // configure for 2 wait states (minimum for 48 MHz operation) for flash Bank 1
+  FLCTL_BANK1_RDCTL = (FLCTL_BANK1_RDCTL&~0x0000F000)|FLCTL_BANK1_RDCTL_WAIT_2;
   CSCTL1 = 0x20000000 |                 // configure for SMCLK divider /4
            0x00100000 |                 // configure for HSMCLK divider /2
            0x00000200 |                 // configure for ACLK sourced from REFOCLK
@@ -2548,7 +2552,7 @@ uint32_t BSP_Time_Get(void){
 // Outputs: none
 void BSP_Delay1ms(uint32_t n){
   while(n){
-    parrotdelay(5901);                  // 1 msec, tuned at 48 MHz, originally part of LCD module
+    parrotdelay(8000);                  // 1 msec, tuned at 48 MHz, originally part of LCD module
     n--;
   }
 }

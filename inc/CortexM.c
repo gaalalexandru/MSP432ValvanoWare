@@ -1,7 +1,7 @@
 // CortexM.c
 // Cortex M registers and basic functions used in these labs
 // Daniel and Jonathan Valvano
-// May 24, 2016
+// September 20, 2016
 #include <stdint.h>
 
 //******DisableInterrupts************
@@ -111,9 +111,8 @@
 	
 
 // delay function
-// which delays about 8.1*ulCount cycles
-// ulCount=5901 => 1ms = (5901 loops)*(8.1 cycles/loop)*(20.83 ns/cycle)
-// ulCount=9835 => 1ms = (9835 loops)*(8.1 cycles/loop)*(12.5 ns/cycle)
+// which delays about 6*ulCount cycles
+// ulCount=8000 => 1ms = (8000 loops)*(6 cycles/loop)*(20.83 ns/cycle)
 #ifdef __TI_COMPILER_VERSION__
   //Code Composer Studio Code
   void delay(unsigned long ulCount){
@@ -138,7 +137,7 @@
 // Outputs: none
 void Clock_Delay1ms(uint32_t n){
   while(n){
-    delay(5901);   // 1 msec, tuned at 48 MHz
+    delay(8000);   // 1 msec, tuned at 48 MHz
     n--;
   }
 }

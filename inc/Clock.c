@@ -1,7 +1,7 @@
 // Clock.c
 // Runs on the MSP432 
 // Daniel and Jonathan Valvano
-// July 21, 2016
+// September 20, 2016
 
 /* This example accompanies the books
    "Embedded Systems: Introduction to the MSP432 Microcontroller",
@@ -97,6 +97,10 @@ void Clock_InitFastest(void){
       return;                           // time out error
     }
   }
+  // configure for 2 wait states (minimum for 48 MHz operation) for flash Bank 0
+  FLCTL_BANK0_RDCTL = (FLCTL_BANK0_RDCTL&~0x0000F000)|FLCTL_BANK0_RDCTL_WAIT_2;
+  // configure for 2 wait states (minimum for 48 MHz operation) for flash Bank 1
+  FLCTL_BANK1_RDCTL = (FLCTL_BANK1_RDCTL&~0x0000F000)|FLCTL_BANK1_RDCTL_WAIT_2;
   CSCTL1 = 0x20000000 |                 // configure for SMCLK divider /4
            0x00100000 |                 // configure for HSMCLK divider /2
            0x00000200 |                 // configure for ACLK sourced from REFOCLK
@@ -115,7 +119,3 @@ void Clock_InitFastest(void){
 uint32_t Clock_GetFreq(void){
   return ClockFrequency;
 }
-
-
-
-

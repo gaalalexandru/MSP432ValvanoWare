@@ -5,7 +5,7 @@
 //   forming a bridge between the low-level hardware and the high-level software.
 
 // Daniel and Jonathan Valvano
-// June 13, 2016
+// September 20, 2016
 
 /* This example accompanies the books
    "Embedded Systems: Introduction to the MSP432 Microcontroller",
@@ -1112,8 +1112,8 @@ uint8_t static writedata(uint8_t c) {
 
 
 // delay function for testing
-// which delays about 8.1*ulCount cycles
-// ulCount=5901 => 1ms = 5901*8.1cycle/loop/48,000
+// which delays about 6*ulCount cycles
+// ulCount=8000 => 1ms = 8000*6cycle/loop/48,000
 #ifdef __TI_COMPILER_VERSION__
   //Code Composer Studio Code
   void parrotdelay(unsigned long ulCount){
@@ -2146,6 +2146,10 @@ void BSP_Clock_InitFastest(void){
       return;                           // time out error
     }
   }
+  // configure for 2 wait states (minimum for 48 MHz operation) for flash Bank 0
+  FLCTL_BANK0_RDCTL = (FLCTL_BANK0_RDCTL&~0x0000F000)|FLCTL_BANK0_RDCTL_WAIT_2;
+  // configure for 2 wait states (minimum for 48 MHz operation) for flash Bank 1
+  FLCTL_BANK1_RDCTL = (FLCTL_BANK1_RDCTL&~0x0000F000)|FLCTL_BANK1_RDCTL_WAIT_2;
   CSCTL1 = 0x20000000 |                 // configure for SMCLK divider /4
            0x00100000 |                 // configure for HSMCLK divider /2
            0x00000200 |                 // configure for ACLK sourced from REFOCLK
@@ -2393,7 +2397,7 @@ uint32_t BSP_Time_Get(void){
 // Outputs: none
 void BSP_Delay1ms(uint32_t n){
   while(n){
-    parrotdelay(5901);                  // 1 msec, tuned at 48 MHz, originally part of LCD module
+    parrotdelay(8000);                  // 1 msec, tuned at 48 MHz, originally part of LCD module
     n--;
   }
 }

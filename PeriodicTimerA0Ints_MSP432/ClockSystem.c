@@ -2,14 +2,14 @@
 // Runs on MSP432
 // Change the clock frequency using the Clock System module.
 // Daniel Valvano
-// June 30, 2015
+// September 20, 2016
 
 /* This example accompanies the book
    "Embedded Systems: Introduction to the MSP432 Microcontroller",
-   ISBN: 978-1512185676, Jonathan Valvano, copyright (c) 2015
+   ISBN: 978-1512185676, Jonathan Valvano, copyright (c) 2016
    Program 4.6
 
- Copyright 2015 by Jonathan W. Valvano, valvano@mail.utexas.edu
+ Copyright 2016 by Jonathan W. Valvano, valvano@mail.utexas.edu
     You may use, edit, run or distribute this file
     as long as the above copyright notice remains
  THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
@@ -23,8 +23,7 @@
 
 #include <stdint.h>
 #include "ClockSystem.h"
-#include "..\inc\msp432p401r.h"
-
+#include "../inc/msp432p401r.h"
 
 //------------Clock_Init------------
 // Configure for SMCLK = MCLK = speed, ACLK = REFOCLK.
@@ -115,6 +114,10 @@ void Clock_Init48MHz(void){
       return;                           // time out error
     }
   }
+  // configure for 2 wait states (minimum for 48 MHz operation) for flash Bank 0
+  FLCTL_BANK0_RDCTL = (FLCTL_BANK0_RDCTL&~0x0000F000)|FLCTL_BANK0_RDCTL_WAIT_2;
+  // configure for 2 wait states (minimum for 48 MHz operation) for flash Bank 1
+  FLCTL_BANK1_RDCTL = (FLCTL_BANK1_RDCTL&~0x0000F000)|FLCTL_BANK1_RDCTL_WAIT_2;
   CSCTL1 = 0x20000000 |                 // configure for SMCLK divider /4
            0x00100000 |                 // configure for HSMCLK divider /2
            0x00000200 |                 // configure for ACLK sourced from REFOCLK
