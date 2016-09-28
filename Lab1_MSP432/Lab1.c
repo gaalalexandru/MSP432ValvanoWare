@@ -122,6 +122,8 @@ enum plotstate PlotState = Accelerometer;
 #define LIGHTCOLOR  LCD_LIGHTGREEN
 #define TOPTXTCOLOR LCD_WHITE
 #define TOPNUMCOLOR LCD_ORANGE
+
+#define BUZZERLEVEL (30)	//Max is 512
 //------------ end of Global variables shared between tasks -------------
 
 //---------------- Task0 samples sound from microphone ----------------
@@ -329,7 +331,7 @@ void Task3(void){
       PlotState = Accelerometer;
     }
     ReDrawAxes = 1;                // redraw axes on next call of display task
-    BSP_Buzzer_Set(512);           // beep until next call of this task
+    BSP_Buzzer_Set(BUZZERLEVEL);           // beep until next call of this task
   }
   prev1 = current;
   current = BSP_Button2_Input();
@@ -343,7 +345,7 @@ void Task3(void){
       PlotState = Microphone;
     }
     ReDrawAxes = 1;                // redraw axes on next call of display task
-    BSP_Buzzer_Set(512);           // beep until next call of this task
+    BSP_Buzzer_Set(BUZZERLEVEL);           // beep until next call of this task
   }
   prev2 = current;
   // update the LED
@@ -463,12 +465,13 @@ void Task5(void){
 /* ****************************************** */
 
 int main(void){
+	int count = 0;
   DisableInterrupts();
   BSP_Clock_InitFastest();
   Profile_Init();               // initialize the 7 hardware profiling pins
   // change 1000 to 4-digit number from edX
-  TExaS_Init(GRADER,1000);      // initialize the Lab 1 grader
-//  TExaS_Init(LOGICANALYZER,1000);   // initialize the Lab 1 logic analyzer
+//  TExaS_Init(GRADER,1000);      // initialize the Lab 1 grader
+  TExaS_Init(LOGICANALYZER,1000);   // initialize the Lab 1 logic analyzer
   Task0_Init();    // microphone init
   Task1_Init();    // accelerometer init
   Task2_Init();    // light init
@@ -478,17 +481,23 @@ int main(void){
   Time = 0;
   EnableInterrupts(); // interrupts needed for grader to run
   while(1){
-    for(int i=0; i<10; i++){ // runs at about 10 Hz
-      Task0();  // sample microphone
-      Task1();  // sample accelerometer
+		Task0();  // sample microphone // runs at about 1000 Hz
+		
+		if ((count % 100) == 0) // runs at about 10 Hz
+		{
+			Task1();  // sample accelerometer
       Task3();  // check the buttons and change mode if pressed
       Task4();  // update the plot
-      BSP_Delay1ms(100);
+		}
+		if ((count % 1000) == 0) // runs at about 1 Hz
+		{
+			Task2();   // sample light at 1 Hz
+			Task5();   // update the LCD text at 1 Hz
+			Profile_Toggle6();
+			Time++;    // 1 Hz
     }
-    Task2();   // sample light at 1 Hz
-    Task5();   // update the LCD text at 1 Hz
-    Time++;    // 1 Hz
-    Profile_Toggle6();
+		count ++;
+		BSP_Delay1ms(1);
   }
 }
 
