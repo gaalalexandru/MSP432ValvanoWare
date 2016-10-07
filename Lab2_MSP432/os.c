@@ -17,6 +17,11 @@ tcbType tcbs[NUMTHREADS];
 tcbType *RunPt;
 int32_t Stacks[NUMTHREADS][STACKSIZE];
 
+void (*PerThread0)(void);
+void (*PerThread1)(void);
+int32_t PerThread0_Period, PerThread1_Period;
+
+int32_t Mail,Sent,Lost;
 
 // ******** OS_Init ************
 // Initialize operating system, disable interrupts
@@ -29,12 +34,30 @@ void OS_Init(void){
   BSP_Clock_InitFastest();// set processor clock to fastest speed
   // initialize any global variables as needed
   //***YOU IMPLEMENT THIS FUNCTION*****
-
+	
 }
 
 void SetInitialStack(int i){
   //***YOU IMPLEMENT THIS FUNCTION*****
-
+	//AleGaa - first set for each stack the stack pointer
+	tcbs[i].sp = &Stacks[i][STACKSIZE-16];	//Thread Stack Pointer	R13 = SP
+	//AleGaa - fill in bottom positions of the stack with register values, as if thread was already running and interrupted
+	Stacks[i][STACKSIZE-1] = 0x01000000; //Thumb bit on last stack element
+	//Stacks[i][STACKSIZE-2] = PC; //The Program Counter will be set later with the address of the function it points to, R15 = PC
+	Stacks[i][STACKSIZE-3] = 0x14141414; //Initial Link Register dummy value, R14 = LR
+	Stacks[i][STACKSIZE-4] = 0x12121212; //R12
+	Stacks[i][STACKSIZE-5] = 0x03030303; //R3
+	Stacks[i][STACKSIZE-6] = 0x02020202; //R2
+	Stacks[i][STACKSIZE-7] = 0x01010101; //R1
+	Stacks[i][STACKSIZE-8] = 0x00000000; //R0
+	Stacks[i][STACKSIZE-9] = 0x11111111; //R11
+	Stacks[i][STACKSIZE-10] = 0x10101010; //R10
+	Stacks[i][STACKSIZE-12] = 0x09090909; //R9
+	Stacks[i][STACKSIZE-13] = 0x08080808; //R8
+  Stacks[i][STACKSIZE-13] = 0x07070707; //R7
+  Stacks[i][STACKSIZE-14] = 0x06060606; //R6
+  Stacks[i][STACKSIZE-15] = 0x05050505; //R5
+  Stacks[i][STACKSIZE-16] = 0x04040404; //R4	
 }
 
 //******** OS_AddThreads ***************
@@ -46,12 +69,31 @@ int OS_AddThreads(void(*thread0)(void),
                   void(*thread1)(void),
                   void(*thread2)(void),
                   void(*thread3)(void)){
-// initialize TCB circular list
-// initialize RunPt
-// initialize four stacks, including initial PC
-  //***YOU IMPLEMENT THIS FUNCTION*****
+//***YOU IMPLEMENT THIS FUNCTION*****
+	char sr;	//I bit status
+	sr = StartCritical();	//Disable Interrupts
+	
+	//AleGaa initialize TCB circular list
+	tcbs[0].next = &tcbs[1];	//main thread 0 points to main thread 1
+	tcbs[1].next = &tcbs[2];	//main thread 1 points to main thread 2
+	tcbs[2].next = &tcbs[3];	//main thread 2 points to main thread 3	
+	tcbs[3].next = &tcbs[0];	//main thread 3 points to main thread 0
 
-  return 1;               // successful
+	// initialize RunPt
+	RunPt = &tcbs[0];
+
+	// initialize four stacks, including initial PC
+	SetInitialStack(0);	//SetInitialStack initial stack of main thread 0
+	Stacks[0][STACKSIZE-2] = (int32_t)(thread0);	//Set address of thread0 as PC
+	SetInitialStack(1);	//SetInitialStack initial stack of main thread 0
+	Stacks[1][STACKSIZE-2] = (int32_t)(thread1);	//Set address of thread1 as PC	
+	SetInitialStack(1);	//SetInitialStack initial stack of main thread 0
+	Stacks[2][STACKSIZE-2] = (int32_t)(thread2);	//Set address of thread2 as PC
+	SetInitialStack(1);	//SetInitialStack initial stack of main thread 0
+	Stacks[3][STACKSIZE-2] = (int32_t)(thread3);	//Set address of thread3 as PC
+	
+  EndCritical(sr);	//Enable Interrupts
+	return 1;               // successful
 }
 //******** OS_AddThreads3 ***************
 // add three foregound threads to the scheduler
@@ -81,7 +123,10 @@ int OS_AddThreads3(void(*task0)(void),
 int OS_AddPeriodicEventThreads(void(*thread1)(void), uint32_t period1,
   void(*thread2)(void), uint32_t period2){
   //***YOU IMPLEMENT THIS FUNCTION*****
-
+	PerThread0 = thread1;
+	PerThread1 = thread2;		
+	PerThread0_Period = period1;
+	PerThread1_Period = period2;
   return 1;
 }
 
@@ -100,10 +145,23 @@ void OS_Launch(uint32_t theTimeSlice){
 }
 // runs every ms
 void Scheduler(void){ // every time slice
-  // run any periodic event threads if needed
-  // implement round robin scheduler, update RunPt
   //***YOU IMPLEMENT THIS FUNCTION*****
+	static int32_t Counter = 0;
   
+	// run any periodic event threads if needed
+	Counter = (Counter + 1)%100;
+
+	if ((Counter % PerThread0_Period) == 0)
+	{
+		(*PerThread0)();	//Run periodic thread, every PerThread0_Period ms
+	}
+	if ((Counter % PerThread1_Period) == 0)
+	{
+		(*PerThread1)();	//Run periodic thread1, every PerThread1_Period ms
+	}
+	
+  //AleGaa-  implement round robin scheduler, update RunPt
+  RunPt = RunPt->next;  // Round Robin
 }
 
 // ******** OS_InitSemaphore ************
@@ -113,7 +171,8 @@ void Scheduler(void){ // every time slice
 // Outputs: none
 void OS_InitSemaphore(int32_t *semaPt, int32_t value){
   //***YOU IMPLEMENT THIS FUNCTION*****
-
+	//AleGaa - Assign initial value to *semaPt
+	*semaPt = value;
 }
 
 // ******** OS_Wait ************
@@ -123,7 +182,16 @@ void OS_InitSemaphore(int32_t *semaPt, int32_t value){
 // Inputs:  pointer to a counting semaphore
 // Outputs: none
 void OS_Wait(int32_t *semaPt){
-
+	//***YOU IMPLEMENT THIS FUNCTION*****
+	//AleGaa
+	DisableInterrupts();
+	while((*semaPt) == 0)
+	{
+		EnableInterrupts();
+		DisableInterrupts();
+	}
+	*semaPt = 0;
+	EnableInterrupts();
 }
 
 // ******** OS_Signal ************
@@ -133,8 +201,11 @@ void OS_Wait(int32_t *semaPt){
 // Inputs:  pointer to a counting semaphore
 // Outputs: none
 void OS_Signal(int32_t *semaPt){
-//***YOU IMPLEMENT THIS FUNCTION*****
-
+	//***YOU IMPLEMENT THIS FUNCTION*****
+	//AleGaa
+	DisableInterrupts();
+	*semaPt = 1;
+	EnableInterrupts();
 }
 
 
@@ -148,7 +219,9 @@ void OS_Signal(int32_t *semaPt){
 void OS_MailBox_Init(void){
   // include data field and semaphore
   //***YOU IMPLEMENT THIS FUNCTION*****
-
+	Mail = 0;
+	Sent = 0;
+	Lost = 0;
 }
 
 // ******** OS_MailBox_Send ************
@@ -159,7 +232,16 @@ void OS_MailBox_Init(void){
 // Errors: data lost if MailBox already has data
 void OS_MailBox_Send(uint32_t data){
   //***YOU IMPLEMENT THIS FUNCTION*****
-
+	//AleGaa
+	if(Sent)
+	{
+		Lost++;
+	}
+	else
+	{
+		Mail = data;
+		OS_Signal(&Sent);
+	}
 }
 
 // ******** OS_MailBox_Recv ************
@@ -172,7 +254,10 @@ void OS_MailBox_Send(uint32_t data){
 // Errors:  none
 uint32_t OS_MailBox_Recv(void){ uint32_t data;
   //***YOU IMPLEMENT THIS FUNCTION*****
-  return data;
+  //AleGaa
+	OS_Wait(&Sent);
+	data = Mail;
+	return data;
 }
 
 

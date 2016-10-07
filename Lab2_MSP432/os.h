@@ -36,6 +36,9 @@ struct tcb{
 };
 typedef struct tcb tcbType;
 
+//typedef void(*FuncPtType)(void);	//AleGaa
+
+
 // ******** OS_Init ************
 // Initialize operating system, disable interrupts
 // Initialize OS controlled I/O: systick, bus clock as fast as possible
