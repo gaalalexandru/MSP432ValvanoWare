@@ -107,7 +107,26 @@ int OS_AddThreads3(void(*task0)(void),
 // initialize RunPt
 // initialize four stacks, including initial PC
   //***YOU IMPLEMENT THIS FUNCTION*****
+char sr;	//I bit status
+	sr = StartCritical();	//Disable Interrupts
+	
+	//AleGaa initialize TCB circular list
+	tcbs[0].next = &tcbs[1];	//main thread 0 points to main thread 1
+	tcbs[1].next = &tcbs[2];	//main thread 1 points to main thread 2
+	tcbs[2].next = &tcbs[0];	//main thread 2 points to main thread 3	
 
+	// initialize RunPt
+	RunPt = &tcbs[0];
+
+	// initialize four stacks, including initial PC
+	SetInitialStack(0);	//SetInitialStack initial stack of main thread 0
+	Stacks[0][STACKSIZE-2] = (int32_t)(task0);	//Set address of thread0 as PC
+	SetInitialStack(1);	//SetInitialStack initial stack of main thread 0
+	Stacks[1][STACKSIZE-2] = (int32_t)(task1);	//Set address of thread1 as PC	
+	SetInitialStack(1);	//SetInitialStack initial stack of main thread 0
+	Stacks[2][STACKSIZE-2] = (int32_t)(task2);	//Set address of thread2 as PC
+	
+  EndCritical(sr);	//Enable Interrupts
   return 1;               // successful
 }
 //******** OS_AddPeriodicEventThreads ***************
@@ -190,7 +209,7 @@ void OS_Wait(int32_t *semaPt){
 		EnableInterrupts();
 		DisableInterrupts();
 	}
-	*semaPt = 0;
+	*semaPt = (*semaPt) - 1;
 	EnableInterrupts();
 }
 
@@ -204,7 +223,7 @@ void OS_Signal(int32_t *semaPt){
 	//***YOU IMPLEMENT THIS FUNCTION*****
 	//AleGaa
 	DisableInterrupts();
-	*semaPt = 1;
+	*semaPt = (*semaPt) + 1;
 	EnableInterrupts();
 }
 

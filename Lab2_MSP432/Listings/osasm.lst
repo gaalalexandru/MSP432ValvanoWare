@@ -33,20 +33,20 @@ ARM Macro Assembler    Page 1
    22 00000000 B672            CPSID            I           ; 2) Prevent interr
                                                             upt during switch
    23 00000002         ;AleGaa - start
-   24 00000002 E92D 0FF0       PUSH             {R4-R11}    ; 3) Save remaining
-                                                             regs r4-11
-   25 00000006 480D            LDR              R0, =RunPt  ; 4) R0=pointer to 
-                                                            RunPt, old thread
-   26 00000008 6801            LDR              R1, [R0]    ;    R1 = RunPt
-   27 0000000A F8C1 D000       STR              SP, [R1]    ; 5) Save SP into T
-                                                            CB
-   28 0000000E 6849            LDR              R1, [R1,#4] ; 6) R1 = RunPt->ne
-                                                            xt
-   29 00000010 6001            STR              R1, [R0]    ;    RunPt = R1
-   30 00000012 F8D1 D000       LDR              SP, [R1]    ; 7) new thread SP;
-                                                             SP = RunPt->sp;
-   31 00000016 E8BD 0FF0       POP              {R4-R11}    ; 8) restore regs r
-                                                            4-11
+   24 00000002 E92D 0FF0       PUSH             {R4-R11}    ;saves registers R4
+                                                             to R11
+   25 00000006 480D            LDR              R0,=RunPt   ;load address of Ru
+                                                            nPt to R0
+   26 00000008 6801            LDR              R1,[R0]     ;R1 = RunPt
+   27 0000000A F8C1 D000       STR              SP,[R1]     ;save current SP to
+                                                             tcbs.sp
+   28 0000000E 6849            LDR              R1,[R1,#4]  ;move to next tcbs
+   29 00000010 6001            STR              R1,[R0]     ;R1 = RunPt, for th
+                                                            e upcomming tcbs
+   30 00000012 F8D1 D000       LDR              SP,[R1]     ;load new SP, SP = 
+                                                            RunPt.sp
+   31 00000016 E8BD 0FF0       POP              {R4-R11}    ;load registers fro
+                                                            m stack
    32 0000001A         ;AleGaa - end
    33 0000001A B662            CPSIE            I           ; 9) tasks run with
                                                              interrupts enabled
@@ -56,27 +56,25 @@ ARM Macro Assembler    Page 1
    35 0000001E         
    36 0000001E         StartOS
    37 0000001E         ;AleGaa - start
-   38 0000001E 4807            LDR              R0, =RunPt  ; currently running
-                                                             thread
-   39 00000020 6801            LDR              R1, [R0]    ; R1 = value of Run
-                                                            Pt
-   40 00000022 F8D1 D000       LDR              SP, [R1]    ; new thread SP; SP
-                                                             = RunPt->sp;
-   41 00000026 E8BD 0FF0       POP              {R4-R11}    ; restore regs r4-1
+   38 0000001E 4807            LDR              R0,=RunPt   ;load address of Ru
+                                                            nPt to R0
+   39 00000020 6802            LDR              R2,[R0]     ;R2 = RunPt
+   40 00000022 F8D2 D000       LDR              SP,[R2]     ;Load value of RunP
+                                                            t.sp to SP
+   41 00000026 E8BD 0FF0       POP              {R4-R11}
+   42 0000002A BC0F            POP              {R0-R3}
 
 
 
 ARM Macro Assembler    Page 2 
 
 
-                                                            1
-   42 0000002A BC0F            POP              {R0-R3}     ; restore regs r0-3
-                                                            
    43 0000002C F85D CB04       POP              {R12}
-   44 00000030 B001            ADD              SP, SP, #4  ; discard LR from i
-                                                            nitial stack
-   45 00000032 F85D EB04       POP              {LR}        ; start location
-   46 00000036 B001            ADD              SP, SP, #4  ; discard PSR
+   44 00000030 B001            ADD              SP,SP,#4    ;move to next eleme
+                                                            nt
+   45 00000032 F85D EB04       POP              {LR}
+   46 00000036 B001            ADD              SP,SP,#4    ;move to next eleme
+                                                            nt
    47 00000038         ;AleGaa - end
    48 00000038 B662            CPSIE            I           ; Enable interrupts
                                                              at processor level
@@ -88,9 +86,9 @@ ARM Macro Assembler    Page 2
    52 0000003C                 END
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --apcs=interw
-ork --depend=.\objects\osasm.d -o.\objects\osasm.o -IC:\Keil_v5\MSP432ValvanoWa
-re\Lab2_MSP432\RTE -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include -I
-C:\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include --pred
+ork --depend=.\objects\osasm.d -o.\objects\osasm.o -ID:\Keil_v5\MSP432ValvanoWa
+re\Lab2_MSP432\RTE -ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include -I
+D:\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include --pred
 efine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 521" --predefine="_RT
 E_ SETA 1" --predefine="__MSP432P401R__ SETA 1" --list=.\listings\osasm.lst osa
 sm.s

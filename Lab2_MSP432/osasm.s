@@ -21,29 +21,29 @@
 SysTick_Handler                ; 1) Saves R0-R3,R12,LR,PC,PSR
     CPSID   I                  ; 2) Prevent interrupt during switch
 	;AleGaa - start
-	PUSH    {R4-R11}           ; 3) Save remaining regs r4-11
-    LDR     R0, =RunPt         ; 4) R0=pointer to RunPt, old thread
-    LDR     R1, [R0]           ;    R1 = RunPt
-    STR     SP, [R1]           ; 5) Save SP into TCB
-    LDR     R1, [R1,#4]        ; 6) R1 = RunPt->next
-    STR     R1, [R0]           ;    RunPt = R1
-    LDR     SP, [R1]           ; 7) new thread SP; SP = RunPt->sp;
-    POP     {R4-R11}           ; 8) restore regs r4-11
+	PUSH {R4-R11}	;saves registers R4 to R11
+	LDR R0,=RunPt	;load address of RunPt to R0
+	LDR R1,[R0]		;R1 = RunPt
+	STR SP,[R1]		;save current SP to tcbs.sp
+	LDR R1,[R1,#4]	;move to next tcbs
+	STR R1,[R0]		;R1 = RunPt, for the upcomming tcbs
+	LDR SP,[R1]		;load new SP, SP = RunPt.sp
+	POP {R4-R11}	;load registers from stack
 	;AleGaa - end
     CPSIE   I                  ; 9) tasks run with interrupts enabled
     BX      LR                 ; 10) restore R0-R3,R12,LR,PC,PSR
 
 StartOS
 	;AleGaa - start
-    LDR     R0, =RunPt   ; currently running thread
-    LDR     R1, [R0]     ; R1 = value of RunPt
-    LDR     SP, [R1]     ; new thread SP; SP = RunPt->sp;
-    POP     {R4-R11}     ; restore regs r4-11
-    POP     {R0-R3}      ; restore regs r0-3
-    POP     {R12}
-    ADD     SP, SP, #4   ; discard LR from initial stack
-    POP     {LR}         ; start location
-    ADD     SP, SP, #4   ; discard PSR
+	LDR R0,=RunPt	;load address of RunPt to R0
+	LDR R2,[R0]		;R2 = RunPt
+	LDR SP,[R2]		;Load value of RunPt.sp to SP
+	POP {R4-R11}
+	POP {R0-R3}
+	POP {R12}
+	ADD SP,SP,#4	;move to next element
+	POP {LR}
+	ADD SP,SP,#4	;move to next element
 	;AleGaa - end
 	CPSIE   I                  ; Enable interrupts at processor level
     BX      LR                 ; start first thread

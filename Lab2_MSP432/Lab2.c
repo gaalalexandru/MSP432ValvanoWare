@@ -397,7 +397,7 @@ void Task5(void){int32_t soundSum;
 /*          End of Task5 Section              */
 /* ****************************************** */
 
-int main(void){
+/*int main(void){
   OS_Init();
   Profile_Init();  // initialize the 7 hardware profiling pins
   Task0_Init();    // microphone init
@@ -417,7 +417,7 @@ int main(void){
 //  TExaS_Init(LOGICANALYZER, 1000); // initialize the Lab 2 logic analyzer
   OS_Launch(BSP_Clock_GetFreq()/THREADFREQ); // doesn't return, interrupts enabled in here
   return 0;             // this never executes
-}
+}*/
 
 
 //******************Step 1**************************
@@ -455,7 +455,7 @@ int main_step2(void){ uint32_t in=0;
 //  OS_Init
 //  OS_AddThreads3 (with just 3 threads for now)
 //  OS_Launch
-int main_step3(void){
+int main(void){
   OS_Init();
   Profile_Init();  // initialize the 7 hardware profiling pins
   Task0_Init();    // microphone init

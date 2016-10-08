@@ -54,8 +54,8 @@ SysTick_Handler                ; 1) Saves R0-R3,R12,LR,PC,PSR
 
 StartOS
     LDR     R0, =RunPt         ; currently running thread
-    LDR     R2, [R0]           ; R2 = value of RunPt
-    LDR     SP, [R2]           ; new thread SP; SP = RunPt->stackPointer;
+    LDR     R1, [R0]           ; R2 = value of RunPt
+    LDR     SP, [R1]           ; new thread SP; SP = RunPt->stackPointer;
     POP     {R4-R11}           ; restore regs r4-11
     POP     {R0-R3}            ; restore regs r0-3
     POP     {R12}
