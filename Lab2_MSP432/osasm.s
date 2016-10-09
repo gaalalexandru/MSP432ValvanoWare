@@ -25,8 +25,14 @@ SysTick_Handler                ; 1) Saves R0-R3,R12,LR,PC,PSR
 	LDR R0,=RunPt	;load address of RunPt to R0
 	LDR R1,[R0]		;R1 = RunPt
 	STR SP,[R1]		;save current SP to tcbs.sp
-	LDR R1,[R1,#4]	;move to next tcbs
-	STR R1,[R0]		;R1 = RunPt, for the upcomming tcbs
+	;LDR R1,[R1,#4]	;move to next tcbs
+	;STR R1,[R0]		;R1 = RunPt, for the upcomming tcbs
+	
+	PUSH {R0,LR}
+	BL Scheduler
+	POP {R0,LR}
+	LDR R1,[R0]		; 6) R1 = RunPt, new thread
+	
 	LDR SP,[R1]		;load new SP, SP = RunPt.sp
 	POP {R4-R11}	;load registers from stack
 	;AleGaa - end
