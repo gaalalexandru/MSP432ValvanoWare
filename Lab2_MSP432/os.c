@@ -37,10 +37,9 @@ void OS_Init(void){
 }
 
 void SetInitialStack(int i){
-  //***YOU IMPLEMENT THIS FUNCTION*****
-	//AleGaa - first set for each stack the stack pointer
+	//first set for each stack the stack pointer
 	tcbs[i].sp = &Stacks[i][STACKSIZE-16];	//Thread Stack Pointer	R13 = SP
-	//AleGaa - fill in bottom positions of the stack with register values, as if thread was already running and interrupted
+	//fill in bottom positions of the stack with register values, as if thread was already running and interrupted
 	Stacks[i][STACKSIZE-1] = 0x01000000; //Thumb bit on last stack element
 	//Stacks[i][STACKSIZE-2] = PC; //The Program Counter will be set later with the address of the function it points to, R15 = PC
 	Stacks[i][STACKSIZE-3] = 0x14141414; //Initial Link Register dummy value, R14 = LR
@@ -53,10 +52,10 @@ void SetInitialStack(int i){
 	Stacks[i][STACKSIZE-10] = 0x10101010; //R10
 	Stacks[i][STACKSIZE-12] = 0x09090909; //R9
 	Stacks[i][STACKSIZE-13] = 0x08080808; //R8
-  Stacks[i][STACKSIZE-13] = 0x07070707; //R7
-  Stacks[i][STACKSIZE-14] = 0x06060606; //R6
-  Stacks[i][STACKSIZE-15] = 0x05050505; //R5
-  Stacks[i][STACKSIZE-16] = 0x04040404; //R4	
+  	Stacks[i][STACKSIZE-13] = 0x07070707; //R7
+  	Stacks[i][STACKSIZE-14] = 0x06060606; //R6
+  	Stacks[i][STACKSIZE-15] = 0x05050505; //R5
+  	Stacks[i][STACKSIZE-16] = 0x04040404; //R4	
 }
 
 //******** OS_AddThreads ***************
@@ -90,9 +89,10 @@ int OS_AddThreads(void(*thread0)(void),
 	SetInitialStack(3);	//SetInitialStack initial stack of main thread 0
 	Stacks[3][STACKSIZE-2] = (int32_t)(thread3);	//Set address of thread3 as PC
 	
-  EndCritical(sr);	//Enable Interrupts
+  	EndCritical(sr);	//Enable Interrupts
 	return 1;         // successful
 }
+
 //******** OS_AddThreads3 ***************
 // add three foregound threads to the scheduler
 // This is needed during debugging and not part of final solution
@@ -130,6 +130,7 @@ int OS_AddThreads3(void(*task0)(void),
 */  
 	return 1;               // successful
 }
+
 //******** OS_AddPeriodicEventThreads ***************
 // Add two background periodic event threads
 // Typically this function receives the highest priority
@@ -216,7 +217,6 @@ void OS_Wait(int32_t *semaPt){
 // Inputs:  pointer to a counting semaphore
 // Outputs: none
 void OS_Signal(int32_t *semaPt){
-	//AleGaa
 	DisableInterrupts();
 	*semaPt = (*semaPt) + 1;
 	EnableInterrupts();
@@ -265,5 +265,5 @@ uint32_t OS_MailBox_Recv(void){ uint32_t data;
 	data = Mail;
 	return data;
 }
-
 //EOF
+
