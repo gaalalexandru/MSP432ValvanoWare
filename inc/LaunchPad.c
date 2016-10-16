@@ -58,7 +58,7 @@ uint8_t LaunchPad_Input(void){
 }
 
 //------------LaunchPad__Output------------
-// Input from Switches 
+// Output to LaunchPad LEDs 
 // Input: 0 off, bit0=red,bit1=green,bit2=blue
 // Output: none
 void LaunchPad_Output(uint8_t data){  // write three outputs bits of P2

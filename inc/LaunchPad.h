@@ -30,6 +30,7 @@
 #define RED       0x01
 #define GREEN     0x02
 #define BLUE      0x04
+
 //------------LaunchPad_Init------------
 // Initialize Switch input and LED output
 // Input: none
@@ -46,7 +47,7 @@ void LaunchPad_Init(void);
 uint8_t LaunchPad_Input(void);
 
 //------------LaunchPad__Output------------
-// Input from Switches 
-// Input: 0 off, bit0=red, bit1=green, bit2=blue
+// Output to LaunchPad LEDs 
+// Input: 0 off, bit0=red,bit1=green,bit2=blue
 // Output: none
 void LaunchPad_Output(uint8_t data);

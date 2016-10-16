@@ -211,7 +211,9 @@ uint8_t NPI_AddCharDescriptor[] = {
 int AP_Init(void){int bwaiting;   int count = 0;
   GPIO_Init(); // MRDY, SRDY, reset
 #ifdef APDEBUG
-  if((UCA0CTLW0&0x0001)==0) UART0_Init(); // if not on, enable
+  if(UCA0CTLW0 != 0x00C0){
+    UART0_Init(); // if not on, enable
+  }
   UART0_OutString("\n\rReset CC2650");
 #endif
   UART1_Init();
@@ -278,7 +280,7 @@ void AP_EchoSendMessage(uint8_t *sendMsg){ int i;uint8_t fcs;
   OutString("\n\rLP->SNP ");
   for(i=0; i<=(4+size); i++){ 
     OutUHex2(sendMsg[i]); OutChar(',');
-	}
+  }
   OutUHex2(fcs); //  FCS, calculated and not in messsage
 }
 // *****AP_EchoReceived**************
@@ -291,7 +293,7 @@ void AP_EchoReceived(int response){ uint32_t size; int i;
     size = AP_GetSize(RecvBuf);
     for(i=0; i<=(4+size); i++){ 
       OutUHex2(RecvBuf[i]); OutChar(',');
-	  }
+    }
     OutUHex2(RecvBuf[i]); // FCS
   }else{
     OutString("\n\rfrom SNP fail");

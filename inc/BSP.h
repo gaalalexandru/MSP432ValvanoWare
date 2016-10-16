@@ -166,6 +166,7 @@
 #define LCD_MAGENTA    0xF81F   // 255,   0, 255
 #define LCD_YELLOW     0xFFE0   // 255, 255,   0
 #define LCD_WHITE      0xFFFF   // 255, 255, 255
+#define LCD_GREY       0x8410   // 128, 128, 128
 
 // ------------BSP_Button1_Init------------
 // Initialize a GPIO pin for input, which corresponds
