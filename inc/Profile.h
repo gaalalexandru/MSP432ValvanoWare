@@ -49,7 +49,7 @@
 #define PROFILE4_BIT 0x01
 #define PROFILE5  (*((volatile uint8_t *)(0x42000000+32*0x4C43+4*6)))  /* Port 6.6 Output */
 #define PROFILE5_BIT 0x01
-#define PROFILE6  (*((volatile uint8_t *)(0x42000000+32*0x4C43+4*7)))  /* Port 6.7 Output */
+#define PROFILE6 (*((volatile uint8_t *)(0x42000000+32*0x4C03+4*3))) /* Port 2.3 Output */
 #define PROFILE6_BIT 0x01
 
 // ------------Profile_Init------------

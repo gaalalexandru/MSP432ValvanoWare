@@ -42,6 +42,7 @@
 
 uint32_t sqrt32(uint32_t s);
 #define THREADFREQ 1000   // frequency in Hz of round robin scheduler
+#define BUZZLEVEL	124	//Buzzer PWM duty cycle
 
 //---------------- Global variables shared between tasks ----------------
 uint32_t Time;              // elasped time in 100 ms units
@@ -306,7 +307,7 @@ void Task3(void){
         PlotState = Accelerometer;
       }
       ReDrawAxes = 1;                // redraw axes on next call of display task
-      BSP_Buzzer_Set(512);           // beep until next call of this task
+      BSP_Buzzer_Set(BUZZLEVEL);           // beep until next call of this task
     }
     prev1 = current;
     current = BSP_Button2_Input();
@@ -322,7 +323,7 @@ void Task3(void){
         PlotState = Temperature;
       }
       ReDrawAxes = 1;                // redraw axes on next call of display task
-      BSP_Buzzer_Set(512);           // beep until next call of this task
+      BSP_Buzzer_Set(BUZZLEVEL);           // beep until next call of this task
     }
     prev2 = current;
     // update the LED
@@ -1191,7 +1192,6 @@ int main_step5(void){
 // 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 // 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 // 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
-
 //};
 
 
@@ -1243,8 +1243,8 @@ int main(void){
   OS_AddThreads(&Task2, &Task3, &Task4, &Task5, &Task6, &Task7);
   // when grading change 1000 to 4-digit number from edX
   BSP_LCD_FillScreen(BSP_LCD_Color565(0, 0, 0));
-  TExaS_Init(GRADER, 1000);          // initialize the Lab 3 grader
-//  TExaS_Init(LOGICANALYZER, 1000); // initialize the Lab 3 logic analyzer
+ // TExaS_Init(GRADER, 4228);          // initialize the Lab 3 grader
+TExaS_Init(LOGICANALYZER, 1000); // initialize the Lab 3 logic analyzer
   OS_Launch(BSP_Clock_GetFreq()/THREADFREQ); // doesn't return, interrupts enabled in here
   return 0;             // this never executes
 }
