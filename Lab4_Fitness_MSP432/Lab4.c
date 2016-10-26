@@ -459,7 +459,7 @@ void Task7(void){
 // Remember that you must have exactly one main() function, so
 // to work on this step, you must rename all other main()
 // functions in this file.
-int main(void){
+int main_final(void){
   OS_Init();
   Profile_Init();  // initialize the 7 hardware profiling pins
   BSP_Button1_Init();
@@ -664,7 +664,7 @@ void TaskL(void){ // consumer
   CountL = 0;
   while(1){
     CountL++;
-    OS_Wait(&sKL);  // signaled by TaskL
+    OS_Wait(&sKL);  // signaled by TaskK
     TExaS_Task3();
     Profile_Toggle3();
   }
@@ -759,7 +759,7 @@ void TaskR(void){ // consumer
 		OS_EdgeTrigger_Restart();
   }
 }
-int main_step3(void){
+int main(void){
   OS_Init();
   Profile_Init();  // initialize the 7 hardware profiling pins
   OS_InitSemaphore(&sI, 0);
