@@ -359,7 +359,7 @@ int32_t *edgeSemaphore;
 // Outputs: none
 void OS_EdgeTrigger_Init(int32_t *semaPt, uint8_t priority){
 	edgeSemaphore = semaPt;
-//***IMPLEMENT THIS***
+	//***IMPLEMENT THIS***
   // P5.1 input with pullup
 	P5SEL1 &= ~0x01; //GPIO
 	P5SEL0 &= ~0x01; //GPIO
@@ -397,7 +397,7 @@ void OS_EdgeTrigger_Restart(void){
   // (g) enable interrupt 39 in NVIC
   P5IE |= 0x01; // re-arm interrupt on P5.1	
   // (d) clear flag1
-	P5IFG &= 0x01; //Acknowledge the interrupt, clear flag
+	P5IFG &= ~0x01; //Acknowledge the interrupt, clear flag
 }
 void PORT5_IRQHandler(void){
 //***IMPLEMENT THIS***
@@ -405,6 +405,9 @@ void PORT5_IRQHandler(void){
   // step 2 signal semaphore (no need to run scheduler)
   // step 3 disarm interrupt to prevent bouncing to create multiple signals
 	uint8_t status;
+	
+	P1IFG &= ~0x01;	//clear flag
+	
 	status = P5IV;
 	//Formula to decide wich pin to service on x Port
 	//status is the value in the PxIV register and depends on the pin the interrupt accured

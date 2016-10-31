@@ -771,10 +771,9 @@ int main(void){
 	OS_PeriodTrigger0_Init(&sI,50);   // every 50 ms
 	OS_PeriodTrigger1_Init(&sK,200);  // every 200ms
 	OS_EdgeTrigger_Init(&sQ,2);
-  OS_AddThreads(&TaskI,0, &TaskJ,1, &TaskK,2, &TaskL,3,
-   	&TaskQ,4, &TaskR,5, &TaskO,6, &TaskP,7);
+  OS_AddThreads(&TaskI,0, &TaskJ,1, &TaskK,2, &TaskL,3,	&TaskQ,4, &TaskR,5, &TaskO,6, &TaskP,7);
   TExaS_Init(LOGICANALYZER, 1000); // initialize the Lab 4 grader
-//  TExaS_Init(GRADESTEP3, 1000);    // initialize the Lab 4 grader
+	//TExaS_Init(GRADESTEP3, 1000);    // initialize the Lab 4 grader
   OS_Launch(BSP_Clock_GetFreq()/1000);
   return 0;             // this never executes
 }
