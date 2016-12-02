@@ -93,20 +93,25 @@ const uint8_t NPI_SetAdvertisementMsg[] = {
   0xEE};          // FCS (calculated by AP_SendMessageResponse)
 
 const uint8_t NPI_GATTSetDeviceNameMsg[] = {   
-  SOF,18,0x00,    // length = 18
+//SOF,18,0x00,    // length = 18
+	SOF,14,0x00,    // length = 14
   0x35,0x8C,      // SNP Set GATT Parameter (0x8C)
   0x01,           // Generic Access Service
   0x00,0x00,      // Device Name
-  'S','h','a','p','e',' ','t','h','e',' ','W','o','r','l','d',
+//  'S','h','a','p','e',' ','t','h','e',' ','W','o','r','l','d',
+  'S','a','a','l',' ','G','a','n','d','o','r',
   0x77};          // FCS (calculated by AP_SendMessageResponse)
 
 
 const uint8_t NPI_SetAdvertisementDataMsg[] = {   
-  SOF,27,0x00,    // length = 27
+//SOF,27,0x00,    // length = 27
+  SOF,23,0x00,    // length = 23
   0x55,0x43,      // SNP Set Advertisement Data
   0x00,           // Scan Response Data
-  16,0x09,        // length, type=LOCAL_NAME_COMPLETE
-  'S','h','a','p','e',' ','t','h','e',' ','W','o','r','l','d',
+//16,0x09,        // length, type=LOCAL_NAME_COMPLETE
+  12,0x09,        // length, type=LOCAL_NAME_COMPLETE
+//'S','h','a','p','e',' ','t','h','e',' ','W','o','r','l','d',
+  'G','a','a','l',' ','S','a','n','d','o','r',
 // connection interval range
   0x05,           // length of this data
   0x12,           // GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE
