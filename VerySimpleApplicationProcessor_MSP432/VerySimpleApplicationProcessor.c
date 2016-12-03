@@ -328,7 +328,7 @@ int main(void){ volatile int r1; uint16_t h; uint32_t time=0;
             OutValue("\n\rWrite Data=",RecvBuf[12]);
           }else if(h == Handle3){// Handle3 could be write
             OutValue("\n\rWrite LED=",RecvBuf[12]);
-            LaunchPad_Output(RecvBuf[12]&0x07);
+            LaunchPad_Output(RecvBuf[12]&0x07);  //AleGaa LED output
           }
           if(responseNeeded){
             AP_SendMessage(NPI_WriteConfirmationMsg);
@@ -342,7 +342,7 @@ int main(void){ volatile int r1; uint16_t h; uint32_t time=0;
             NPI_ReadConfirmationMsg[12] = Data;
             OutValue("\n\rRead Data=",NPI_ReadConfirmationMsg[12]);
           }else if(h == Handle2){// Handle2 could be read
-            NPI_ReadConfirmationMsg[12] = LaunchPad_Input();
+            NPI_ReadConfirmationMsg[12] = LaunchPad_Input();  //AleGaa SWITCH input
             OutValue("\n\rRead Switch=",NPI_ReadConfirmationMsg[12]);
           }
           NPI_ReadConfirmationMsg[8] = RecvBuf[7]; // handle
