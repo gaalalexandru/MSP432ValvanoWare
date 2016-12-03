@@ -792,102 +792,102 @@ Memory Map of the image
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000144   Data   RO          545    RESET               startup_msp432p401r_uvision.o
-    0x00000144   0x00000008   Code   RO          603  * !!!main             c_w.l(__main.o)
-    0x0000014c   0x00000034   Code   RO          789    !!!scatter          c_w.l(__scatter.o)
-    0x00000180   0x0000005a   Code   RO          787    !!dczerorl2         c_w.l(__dczerorl2.o)
+    0x00000000   0x00000144   Data   RO          539    RESET               startup_msp432p401r_uvision.o
+    0x00000144   0x00000008   Code   RO          597  * !!!main             c_w.l(__main.o)
+    0x0000014c   0x00000034   Code   RO          783    !!!scatter          c_w.l(__scatter.o)
+    0x00000180   0x0000005a   Code   RO          781    !!dczerorl2         c_w.l(__dczerorl2.o)
     0x000001da   0x00000002   PAD
-    0x000001dc   0x0000001c   Code   RO          791    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x000001f8   0x00000002   Code   RO          657    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x000001fa   0x00000000   Code   RO          664    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          666    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          669    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          671    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          673    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          676    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          678    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          680    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          682    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          684    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          686    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          688    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          690    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          692    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          694    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          696    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          700    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          702    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          704    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x000001fa   0x00000000   Code   RO          706    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x000001fa   0x00000002   Code   RO          707    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x000001fc   0x00000002   Code   RO          727    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x000001fe   0x00000000   Code   RO          740    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x000001fe   0x00000000   Code   RO          742    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x000001fe   0x00000000   Code   RO          745    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x000001fe   0x00000000   Code   RO          748    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x000001fe   0x00000000   Code   RO          750    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x000001fe   0x00000000   Code   RO          753    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x000001fe   0x00000002   Code   RO          754    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x00000200   0x00000000   Code   RO          627    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x00000200   0x00000000   Code   RO          634    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x00000200   0x00000006   Code   RO          646    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x00000206   0x00000000   Code   RO          636    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x00000206   0x00000004   Code   RO          637    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x0000020a   0x00000000   Code   RO          639    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x0000020a   0x00000008   Code   RO          640    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x00000212   0x00000002   Code   RO          661    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x00000214   0x00000000   Code   RO          709    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x00000214   0x00000004   Code   RO          710    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x00000218   0x00000006   Code   RO          711    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x000001dc   0x0000001c   Code   RO          785    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x000001f8   0x00000002   Code   RO          651    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x000001fa   0x00000000   Code   RO          658    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          660    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          663    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          665    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          667    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          670    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          672    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          674    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          676    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          678    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          680    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          682    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          684    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          686    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          688    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          690    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          694    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          696    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          698    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x000001fa   0x00000000   Code   RO          700    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x000001fa   0x00000002   Code   RO          701    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x000001fc   0x00000002   Code   RO          721    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x000001fe   0x00000000   Code   RO          734    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x000001fe   0x00000000   Code   RO          736    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x000001fe   0x00000000   Code   RO          739    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x000001fe   0x00000000   Code   RO          742    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x000001fe   0x00000000   Code   RO          744    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x000001fe   0x00000000   Code   RO          747    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x000001fe   0x00000002   Code   RO          748    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x00000200   0x00000000   Code   RO          621    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x00000200   0x00000000   Code   RO          628    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x00000200   0x00000006   Code   RO          640    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x00000206   0x00000000   Code   RO          630    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x00000206   0x00000004   Code   RO          631    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x0000020a   0x00000000   Code   RO          633    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x0000020a   0x00000008   Code   RO          634    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x00000212   0x00000002   Code   RO          655    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x00000214   0x00000000   Code   RO          703    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x00000214   0x00000004   Code   RO          704    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x00000218   0x00000006   Code   RO          705    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x0000021e   0x00000002   PAD
     0x00000220   0x00000020   Code   RO            1    .emb_text           cortexm.o
-    0x00000240   0x0000003c   Code   RO          546  * .text               startup_msp432p401r_uvision.o
-    0x0000027c   0x00000006   Code   RO          601    .text               c_w.l(heapauxi.o)
-    0x00000282   0x0000004a   Code   RO          648    .text               c_w.l(sys_stackheap_outer.o)
-    0x000002cc   0x00000012   Code   RO          650    .text               c_w.l(exit.o)
+    0x00000240   0x0000003c   Code   RO          540  * .text               startup_msp432p401r_uvision.o
+    0x0000027c   0x00000006   Code   RO          595    .text               c_w.l(heapauxi.o)
+    0x00000282   0x0000004a   Code   RO          642    .text               c_w.l(sys_stackheap_outer.o)
+    0x000002cc   0x00000012   Code   RO          644    .text               c_w.l(exit.o)
     0x000002de   0x00000002   PAD
-    0x000002e0   0x00000008   Code   RO          658    .text               c_w.l(libspace.o)
-    0x000002e8   0x0000000c   Code   RO          719    .text               c_w.l(sys_exit.o)
-    0x000002f4   0x00000002   Code   RO          730    .text               c_w.l(use_no_semi.o)
-    0x000002f6   0x00000000   Code   RO          732    .text               c_w.l(indicate_semi.o)
+    0x000002e0   0x00000008   Code   RO          652    .text               c_w.l(libspace.o)
+    0x000002e8   0x0000000c   Code   RO          713    .text               c_w.l(sys_exit.o)
+    0x000002f4   0x00000002   Code   RO          724    .text               c_w.l(use_no_semi.o)
+    0x000002f6   0x00000000   Code   RO          726    .text               c_w.l(indicate_semi.o)
     0x000002f6   0x00000002   PAD
-    0x000002f8   0x00000064   Code   RO          331    i.AP_EchoReceived   ap.o
-    0x0000035c   0x00000054   Code   RO          332    i.AP_EchoSendMessage  ap.o
-    0x000003b0   0x0000000e   Code   RO          334    i.AP_GetSize        ap.o
+    0x000002f8   0x00000064   Code   RO          325    i.AP_EchoReceived   ap.o
+    0x0000035c   0x00000054   Code   RO          326    i.AP_EchoSendMessage  ap.o
+    0x000003b0   0x0000000e   Code   RO          328    i.AP_GetSize        ap.o
     0x000003be   0x00000002   PAD
-    0x000003c0   0x000000e4   Code   RO          337    i.AP_Init           ap.o
-    0x000004a4   0x00000164   Code   RO          338    i.AP_RecvMessage    ap.o
-    0x00000608   0x00000010   Code   RO          339    i.AP_RecvStatus     ap.o
-    0x00000618   0x00000038   Code   RO          341    i.AP_Reset          ap.o
-    0x00000650   0x000000e8   Code   RO          342    i.AP_SendMessage    ap.o
-    0x00000738   0x0000003a   Code   RO          343    i.AP_SendMessageResponse  ap.o
+    0x000003c0   0x000000e4   Code   RO          331    i.AP_Init           ap.o
+    0x000004a4   0x00000164   Code   RO          332    i.AP_RecvMessage    ap.o
+    0x00000608   0x00000010   Code   RO          333    i.AP_RecvStatus     ap.o
+    0x00000618   0x00000038   Code   RO          335    i.AP_Reset          ap.o
+    0x00000650   0x000000e8   Code   RO          336    i.AP_SendMessage    ap.o
+    0x00000738   0x0000003a   Code   RO          337    i.AP_SendMessageResponse  ap.o
     0x00000772   0x00000016   Code   RO            2    i.Clock_Delay1ms    cortexm.o
     0x00000788   0x00000180   Code   RO           62    i.Clock_InitFastest  clock.o
-    0x00000908   0x00000020   Code   RO          242    i.EUSCIA2_IRQHandler  uart1.o
-    0x00000928   0x000000d0   Code   RO          519    i.GPIO_Init         gpio.o
-    0x000009f8   0x0000008c   Code   RO          483    i.LaunchPad_Init    launchpad.o
-    0x00000a84   0x0000001c   Code   RO          484    i.LaunchPad_Input   launchpad.o
-    0x00000aa0   0x00000014   Code   RO          485    i.LaunchPad_Output  launchpad.o
+    0x00000908   0x00000020   Code   RO          236    i.EUSCIA2_IRQHandler  uart1.o
+    0x00000928   0x000000d0   Code   RO          513    i.GPIO_Init         gpio.o
+    0x000009f8   0x0000008c   Code   RO          477    i.LaunchPad_Init    launchpad.o
+    0x00000a84   0x0000001c   Code   RO          478    i.LaunchPad_Input   launchpad.o
+    0x00000aa0   0x00000014   Code   RO          479    i.LaunchPad_Output  launchpad.o
     0x00000ab4   0x00000014   Code   RO           23    i.OutValue          verysimpleapplicationprocessor.o
-    0x00000ac8   0x00000038   Code   RO          243    i.RxFifo_Get        uart1.o
-    0x00000b00   0x0000001c   Code   RO          244    i.RxFifo_Init       uart1.o
-    0x00000b1c   0x00000048   Code   RO          245    i.RxFifo_Put        uart1.o
-    0x00000b64   0x00000060   Code   RO          554    i.SystemInit        system_msp432p401r.o
-    0x00000bc4   0x00000054   Code   RO          123    i.UART0_Init        uart0.o
-    0x00000c18   0x00000018   Code   RO          124    i.UART0_OutChar     uart0.o
-    0x00000c30   0x00000018   Code   RO          125    i.UART0_OutString   uart0.o
-    0x00000c48   0x00000034   Code   RO          130    i.UART0_OutUHex     uart0.o
-    0x00000c7c   0x00000014   Code   RO          131    i.UART0_OutUHex2    uart0.o
-    0x00000c90   0x00000014   Code   RO          246    i.UART1_FinishOutput  uart1.o
-    0x00000ca4   0x00000014   Code   RO          247    i.UART1_InChar      uart1.o
-    0x00000cb8   0x00000078   Code   RO          249    i.UART1_Init        uart1.o
-    0x00000d30   0x0000001c   Code   RO          250    i.UART1_OutChar     uart1.o
+    0x00000ac8   0x00000038   Code   RO          237    i.RxFifo_Get        uart1.o
+    0x00000b00   0x0000001c   Code   RO          238    i.RxFifo_Init       uart1.o
+    0x00000b1c   0x00000048   Code   RO          239    i.RxFifo_Put        uart1.o
+    0x00000b64   0x00000060   Code   RO          548    i.SystemInit        system_msp432p401r.o
+    0x00000bc4   0x00000054   Code   RO          117    i.UART0_Init        uart0.o
+    0x00000c18   0x00000018   Code   RO          118    i.UART0_OutChar     uart0.o
+    0x00000c30   0x00000018   Code   RO          119    i.UART0_OutString   uart0.o
+    0x00000c48   0x00000034   Code   RO          124    i.UART0_OutUHex     uart0.o
+    0x00000c7c   0x00000014   Code   RO          125    i.UART0_OutUHex2    uart0.o
+    0x00000c90   0x00000014   Code   RO          240    i.UART1_FinishOutput  uart1.o
+    0x00000ca4   0x00000014   Code   RO          241    i.UART1_InChar      uart1.o
+    0x00000cb8   0x00000078   Code   RO          243    i.UART1_Init        uart1.o
+    0x00000d30   0x0000001c   Code   RO          244    i.UART1_OutChar     uart1.o
     0x00000d4c   0x000005a4   Code   RO           24    i.main              verysimpleapplicationprocessor.o
-    0x000012f0   0x00000020   Code   RO          135    i.outnibble         uart0.o
+    0x000012f0   0x00000020   Code   RO          129    i.outnibble         uart0.o
     0x00001310   0x000000f3   Data   RO           25    .constdata          verysimpleapplicationprocessor.o
     0x00001403   0x00000001   PAD
-    0x00001404   0x00000074   Data   RO          347    .constdata          ap.o
-    0x00001478   0x00000020   Data   RO          785    Region$$Table       anon$$obj.o
+    0x00001404   0x00000074   Data   RO          341    .constdata          ap.o
+    0x00001478   0x00000020   Data   RO          779    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000138, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x0000008c])
@@ -897,19 +897,19 @@ Memory Map of the image
     0x20000000   0x0000004b   Data   RW           26    .data               verysimpleapplicationprocessor.o
     0x2000004b   0x00000001   PAD
     0x2000004c   0x00000018   Data   RW           63    .data               clock.o
-    0x20000064   0x0000000c   Data   RW          253    .data               uart1.o
-    0x20000070   0x000000c8   Data   RW          348    .data               ap.o
+    0x20000064   0x0000000c   Data   RW          247    .data               uart1.o
+    0x20000070   0x000000c8   Data   RW          342    .data               ap.o
 
 
     Execution Region ER_ZI (Base: 0x20000138, Size: 0x000004d0, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000138   0x00000100   Zero   RW          252    .bss                uart1.o
-    0x20000238   0x00000170   Zero   RW          346    .bss                ap.o
-    0x200003a8   0x00000060   Zero   RW          659    .bss                c_w.l(libspace.o)
-    0x20000408   0x00000000   Zero   RW          544    HEAP                startup_msp432p401r_uvision.o
-    0x20000408   0x00000200   Zero   RW          543    STACK               startup_msp432p401r_uvision.o
+    0x20000138   0x00000100   Zero   RW          246    .bss                uart1.o
+    0x20000238   0x00000170   Zero   RW          340    .bss                ap.o
+    0x200003a8   0x00000060   Zero   RW          653    .bss                c_w.l(libspace.o)
+    0x20000408   0x00000000   Zero   RW          538    HEAP                startup_msp432p401r_uvision.o
+    0x20000408   0x00000200   Zero   RW          537    STACK               startup_msp432p401r_uvision.o
 
 
 ==============================================================================
@@ -919,19 +919,19 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1144        132        116        200        368       9109   ap.o
-       384         62          0         24          0        980   clock.o
-        54          0          0          0          0       5605   cortexm.o
-       208          6          0          0          0        460   gpio.o
-       188         14          0          0          0       1374   launchpad.o
-        60         22        324          0        512        900   startup_msp432p401r_uvision.o
-        96         22          0          0          0        501   system_msp432p401r.o
-       236         12          0          0          0       2916   uart0.o
-       376         76          0         12        256       4512   uart1.o
-      1464        604        243         75          0       3996   verysimpleapplicationprocessor.o
+      1144        132        116        200        368       9205   ap.o
+       384         62          0         24          0        996   clock.o
+        54          0          0          0          0       5637   cortexm.o
+       208          6          0          0          0        468   gpio.o
+       188         14          0          0          0       1398   launchpad.o
+        60         22        324          0        512        908   startup_msp432p401r_uvision.o
+        96         22          0          0          0        509   system_msp432p401r.o
+       236         12          0          0          0       2964   uart0.o
+       376         76          0         12        256       4600   uart1.o
+      1464        604        243         75          0       4036   verysimpleapplicationprocessor.o
 
     ----------------------------------------------------------------------
-      4212        950        716        312       1136      30353   Object Totals
+      4212        950        716        312       1136      30721   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          1          1          0          0   (incl. Padding)
 
@@ -980,8 +980,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4556        966        716        312       1232      29269   Grand Totals
-      4556        966        716        140       1232      29269   ELF Image Totals (compressed)
+      4556        966        716        312       1232      29637   Grand Totals
+      4556        966        716        140       1232      29637   ELF Image Totals (compressed)
       4556        966        716        140          0          0   ROM Totals
 
 ==============================================================================
