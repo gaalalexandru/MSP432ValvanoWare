@@ -54,7 +54,6 @@ void OS_Init(void){
 }
 
 void SetInitialStack(int i){
-// **Same as Lab 2****
 	//first set for each stack the stack pointer
 	tcbs[i].sp = &Stacks[i][STACKSIZE-16];	//Thread Stack Pointer	R13 = SP
 	//fill in bottom positions of the stack with register values, as if thread was already running and interrupted
@@ -81,7 +80,7 @@ void SetInitialStack(int i){
 // Inputs: function pointers to six void/void main threads
 // Outputs: 1 if successful, 0 if this thread can not be added
 // This function will only be called once, after OS_Init and before OS_Launch
-int OS_AddThreads(void(*thread0)(void), // **similar to Lab 2. initialize as not blocked, not sleeping****
+int OS_AddThreads(void(*thread0)(void),
                   void(*thread1)(void),
                   void(*thread2)(void),
                   void(*thread3)(void),
