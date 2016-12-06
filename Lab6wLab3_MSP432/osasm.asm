@@ -4,6 +4,7 @@
 ; Lab 6 starter file
 ; March 2, 2016
 
+;
         .thumb
         .text
         .align 2
@@ -21,7 +22,7 @@ SysTick_Handler:  .asmfunc      ; 1) Saves R0-R3,R12,LR,PC,PSR
 
        .endasmfunc
 StartOS: .asmfunc
-    LDR     R0, RunPtAddr      ; currently running thread
+    ;LDR     R0, RunPtAddr      ; currently running thread
        ;YOU IMPLEMENT THIS (same as Lab 2)
     CPSIE   I                  ; Enable interrupts at processor level
     BX      LR                 ; start first thread

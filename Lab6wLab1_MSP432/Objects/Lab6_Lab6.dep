@@ -1,0 +1,82 @@
+Dependencies for Project 'Lab6', Target 'Lab6': (DO NOT MODIFY !)
+F (..\inc\BSP.c)(0x57E13CE4)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\inc-IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -D__MSP432P401R__-o .\objects\bsp.o --omf_browse .\objects\bsp.crf --depend .\objects\bsp.d)
+I (F:\0_Tools\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
+I (..\inc\../inc/BSP.h)(0x57FAA060)
+I (..\inc\../inc/CortexM.h)(0x57D28112)
+I (..\inc\../inc/msp432p401r.h)(0x54EDAE26)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\msp_compatibility.h)(0x57986904)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\core_cm4.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_compiler.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_armcc.h)(0x57EB62CC)
+F (..\inc\CortexM.c)(0x57E16610)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\inc-IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -D__MSP432P401R__-o .\objects\cortexm.o --omf_browse .\objects\cortexm.crf --depend .\objects\cortexm.d)
+I (F:\0_Tools\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
+F (..\inc\Profile.c)(0x57604FDC)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\inc-IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -D__MSP432P401R__-o .\objects\profile.o --omf_browse .\objects\profile.crf --depend .\objects\profile.d)
+I (F:\0_Tools\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
+I (..\inc\../inc/msp432p401r.h)(0x54EDAE26)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\msp_compatibility.h)(0x57986904)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\core_cm4.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_compiler.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_armcc.h)(0x57EB62CC)
+F (.\Lab6.c)(0x57FB8640)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\inc-IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -D__MSP432P401R__-o .\objects\lab6.o --omf_browse .\objects\lab6.crf --depend .\objects\lab6.d)
+I (F:\0_Tools\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
+I (../inc/BSP.h)(0x57FAA060)
+I (../inc/CortexM.h)(0x57D28112)
+I (../inc/UART0.h)(0x575BC436)
+I (../inc/Profile.h)(0x5806B626)
+I (Texas.h)(0x57D1290C)
+I (../inc/AP.h)(0x57D4064E)
+I (AP_Lab6.h)(0x57D3C19A)
+F (.\AP_Lab6.c)(0x57FB8DE8)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\inc-IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -D__MSP432P401R__-o .\objects\ap_lab6.o --omf_browse .\objects\ap_lab6.crf --depend .\objects\ap_lab6.d)
+I (F:\0_Tools\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
+I (../inc/UART0.h)(0x575BC436)
+I (../inc/UART1.h)(0x5744A03E)
+I (../inc/AP.h)(0x57D4064E)
+I (AP_Lab6.h)(0x57D3C19A)
+F (..\inc\AP.c)(0x57DED886)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\inc-IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -D__MSP432P401R__-o .\objects\ap.o --omf_browse .\objects\ap.crf --depend .\objects\ap.d)
+I (F:\0_Tools\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
+I (..\inc\../inc/CortexM.h)(0x57D28112)
+I (..\inc\../inc/UART0.h)(0x575BC436)
+I (..\inc\../inc/UART1.h)(0x5744A03E)
+I (..\inc\../inc/AP.h)(0x57D4064E)
+I (..\inc\../inc/msp432p401r.h)(0x54EDAE26)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\msp_compatibility.h)(0x57986904)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\core_cm4.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_compiler.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_armcc.h)(0x57EB62CC)
+I (..\inc\../inc/GPIO.h)(0x57E5142A)
+F (..\inc\UART0.c)(0x575BC436)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\inc-IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -D__MSP432P401R__-o .\objects\uart0.o --omf_browse .\objects\uart0.crf --depend .\objects\uart0.d)
+I (F:\0_Tools\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
+I (..\inc\UART0.h)(0x575BC436)
+I (..\inc\../inc/msp432p401r.h)(0x54EDAE26)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\msp_compatibility.h)(0x57986904)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\core_cm4.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_compiler.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_armcc.h)(0x57EB62CC)
+F (..\inc\UART1.c)(0x578F57A0)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\inc-IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -D__MSP432P401R__-o .\objects\uart1.o --omf_browse .\objects\uart1.crf --depend .\objects\uart1.d)
+I (F:\0_Tools\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
+I (..\inc\UART1.h)(0x5744A03E)
+I (..\inc\../inc/msp432p401r.h)(0x54EDAE26)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\msp_compatibility.h)(0x57986904)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\core_cm4.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_compiler.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_armcc.h)(0x57EB62CC)
+F (..\inc\GPIO.c)(0x57E4B448)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\inc-IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -D__MSP432P401R__-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
+I (..\inc\../inc/msp432p401r.h)(0x54EDAE26)
+I (F:\0_Tools\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\msp_compatibility.h)(0x57986904)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\core_cm4.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_compiler.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_armcc.h)(0x57EB62CC)
+I (..\inc\GPIO.h)(0x57E5142A)
+F (.\texas.o)(0x5842A6C3)()
+F (RTE\Device\MSP432P401R\startup_msp432p401r_uvision.s)(0x57986904)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork -IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include--pd "__UVISION_VERSION SETA 521" --pd "_RTE_ SETA 1" --pd "__MSP432P401R__ SETA 1"--list .\listings\startup_msp432p401r_uvision.lst --xref -o .\objects\startup_msp432p401r_uvision.o --depend .\objects\startup_msp432p401r_uvision.d)
+F (RTE\Device\MSP432P401R\system_msp432p401r.c)(0x57B69FEE)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\inc-IF:\0_Tools\Keil_v5\MSP432ValvanoWare\Lab6wLab1_MSP432\RTE-IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include-IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include-D__UVISION_VERSION="521" -D_RTE_ -D__MSP432P401R__-o .\objects\system_msp432p401r.o --omf_browse .\objects\system_msp432p401r.crf --depend .\objects\system_msp432p401r.d)
+I (F:\0_Tools\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\msp.h)(0x57A08996)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\msp432p401r.h)(0x57B69FEE)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\msp_compatibility.h)(0x57986904)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\msp432p401r_classic.h)(0x57B69FEE)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\core_cm4.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_compiler.h)(0x57D8113A)
+I (F:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_armcc.h)(0x57EB62CC)
+I (F:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include\system_msp432p401r.h)(0x57A08998)

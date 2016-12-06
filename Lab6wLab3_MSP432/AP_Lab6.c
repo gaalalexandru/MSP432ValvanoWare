@@ -60,14 +60,16 @@ extern NotifyCharacteristic_t NotifyCharacteristicList[];
 // Outputs: none
 void SetFCS(uint8_t *msg){
 //****You implement this function as part of Lab 6*****
-  uint8_t msg_lenght;
+  uint8_t frame_check_lenght;
 	uint8_t i;
 	uint8_t fcs;
-	msg_lenght = msg[1] + 4; //byte 1 is equal to the message data length + 4 (2x length byte + 2x command byte)
-	for (i = 1;i <= msg_lenght; i++) {
+	uint8_t data_lenght;
+	data_lenght = AP_GetSize(msg);
+	frame_check_lenght = data_lenght + 4; // is equal to the message data length + 4 (2x length byte + 2x command byte)
+	for (i = 1;i <= frame_check_lenght; i++) {
 		fcs ^= msg[i];
 	}
-	msg[msg_lenght+1] = fcs;
+	msg[frame_check_lenght+1] = fcs;
 }
 //*************BuildGetStatusMsg**************
 // Create a Get Status message, used in Lab 6
@@ -77,8 +79,11 @@ void SetFCS(uint8_t *msg){
 void BuildGetStatusMsg(uint8_t *msg){
 // hint: see NPI_GetStatus in AP.c
 //****You implement this function as part of Lab 6*****
-  
-  
+	msg[0] = SOF;
+	msg[1] = 0x00; msg[2] = 0x00; //Length
+	msg[3] = 0x55; msg[4] = 0x06; //SNP Get Status
+  SetFCS(msg);
+/*const uint8_t NPI_GetStatus[] =   {SOF,0x00,0x00,0x55,0x06,0x53};*/  
 }
 //*************Lab6_GetStatus**************
 // Get status of connection, used in Lab 6
@@ -103,8 +108,11 @@ uint32_t Lab6_GetStatus(void){volatile int r; uint8_t sendMsg[8];
 void BuildGetVersionMsg(uint8_t *msg){
 // hint: see NPI_GetVersion in AP.c
 //****You implement this function as part of Lab 6*****
-  
-  
+	msg[0] = SOF;
+	msg[1] = 0x00; msg[2] = 0x00; //Length
+	msg[3] = 0x35; msg[4] = 0x03; //SNP Get Version
+  SetFCS(msg);	
+/*const uint8_t NPI_GetVersion[] =  {SOF,0x00,0x00,0x35,0x03,0x36};*/  
 }
 //*************Lab6_GetVersion**************
 // Get version of the SNP application running on the CC2650, used in Lab 6
@@ -324,8 +332,27 @@ void BuildSetDeviceNameMsg(char name[], uint8_t *msg){
 // for a hint see NPI_GATTSetDeviceNameMsg in VerySimpleApplicationProcessor.c
 // for a hint see NPI_GATTSetDeviceName in AP.c
 //****You implement this function as part of Lab 6*****
-  
-  
+  uint8_t i = 0;
+	msg[0] = SOF;
+	msg[1] = 18; msg[2] = 0x00; //Length
+	msg[3] = 0x35; msg[4] = 0x8C; //SNP Set GATT Parameter (0x8C)
+	msg[5] = 0x01; //Generic Access Service
+	msg[6] = 0x00; msg[7] = 0x00; // Device Name
+	/*Shape the World*/
+	while(name[i]){
+		msg[8+i] = name[i]; //Add string to message
+		i++;
+	}
+  SetFCS(msg);
+/*
+	uint8_t NPI_GATTSetDeviceName[] = {   
+  SOF,22,0x00,    // length = 22
+  0x35,0x8C,      // SNP Set GATT Parameter (0x8C)
+  0x01,           // Generic Access Service
+	6,7:  0x00,0x00,      // Device Name
+  'S','h','a','p','e',' ','t','h','e',' ','W','o','r','l','d',' ','0','0','1',
+  0x77};          // FCS (calculated by AP_SendMessageResponse)
+*/  
 }
 //*************BuildSetAdvertisementData1Msg**************
 // Create a Set Advertisement Data message, used in Lab 6

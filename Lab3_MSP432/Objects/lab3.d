@@ -1,5 +1,5 @@
 .\objects\lab3.o: Lab3.c
-.\objects\lab3.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lab3.o: F:\0_Tools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\lab3.o: ../inc/BSP.h
 .\objects\lab3.o: ../inc/CortexM.h
 .\objects\lab3.o: os.h

@@ -87,12 +87,12 @@ ARM Macro Assembler    Page 2
    53 00000044                 END
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --apcs=interw
-ork --depend=.\objects\osasm.d -o.\objects\osasm.o -ID:\Keil_v5\MSP432ValvanoWa
-re\Lab3_MSP432\RTE -ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include -I
-D:\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.2.1\Device\Include --pred
-efine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 521" --predefine="_RT
-E_ SETA 1" --predefine="__MSP432P401R__ SETA 1" --list=.\listings\osasm.lst osa
-sm.s
+ork --depend=.\objects\osasm.d -o.\objects\osasm.o -IF:\0_Tools\Keil_v5\MSP432V
+alvanoWare\Lab3_MSP432\RTE -IF:\0_Tools\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta12
+\CMSIS\Include -IF:\0_Tools\Keil_v5\ARM\PACK\TexasInstruments\MSP432P4xx_DFP\2.
+2.1\Device\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION S
+ETA 521" --predefine="_RTE_ SETA 1" --predefine="__MSP432P401R__ SETA 1" --list
+=.\listings\osasm.lst osasm.s
 
 
 
