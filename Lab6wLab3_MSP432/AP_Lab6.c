@@ -60,8 +60,14 @@ extern NotifyCharacteristic_t NotifyCharacteristicList[];
 // Outputs: none
 void SetFCS(uint8_t *msg){
 //****You implement this function as part of Lab 6*****
-  
-  
+  uint8_t msg_lenght;
+	uint8_t i;
+	uint8_t fcs;
+	msg_lenght = msg[1] + 4; //byte 1 is equal to the message data length + 4 (2x length byte + 2x command byte)
+	for (i = 1;i <= msg_lenght; i++) {
+		fcs ^= msg[i];
+	}
+	msg[msg_lenght+1] = fcs;
 }
 //*************BuildGetStatusMsg**************
 // Create a Get Status message, used in Lab 6
@@ -119,15 +125,30 @@ uint32_t Lab6_GetVersion(void){volatile int r;uint8_t sendMsg[8];
 // build the necessary NPI message that will add a service
 void BuildAddServiceMsg(uint16_t uuid, uint8_t *msg){
 //****You implement this function as part of Lab 6*****
-  
-  
+  msg[0] = SOF;
+	msg[1] = 3; msg[2] = 0x00; //Length
+	msg[3] = 0x35; msg[4] = 0x81; //SNP Add Service
+	msg[5] = 0x01; //Primary service
+	msg[6] = uuid&0xFF;
+  msg[7] = uuid>>8;
+  SetFCS(msg);
+	/*
+	uint8_t NPI_AddService[] = {
+  SOF,3,0x00,     // length = 3
+  0x35,0x81,      // SNP Add Service
+  0x01,           // Primary Service
+  0xF0,0xFF,
+  0xB9};          // FCS (calculated by AP_SendMessageResponse)
+	*/
 }
 //*************Lab6_AddService**************
 // Add a service, used in Lab 6
 // Inputs uuid is 0xFFF0, 0xFFF1, ...
 // Output APOK if successful,
 //        APFAIL if SNP failure
-int Lab6_AddService(uint16_t uuid){ int r; uint8_t sendMsg[12];
+int Lab6_AddService(uint16_t uuid){ 
+	int r; 
+	uint8_t sendMsg[12]; //AleGaa: Was NPI_AddService ???
   OutString("\n\rAdd service");
   BuildAddServiceMsg(uuid,sendMsg);
   r = AP_SendMessageResponse(sendMsg,RecvBuf,RECVSIZE);  
@@ -140,15 +161,25 @@ int Lab6_AddService(uint16_t uuid){ int r; uint8_t sendMsg[12];
 // build the necessary NPI message that will register a service
 void BuildRegisterServiceMsg(uint8_t *msg){
 //****You implement this function as part of Lab 6*****
-  
-  
+  msg[0] = SOF;
+	msg[1] = 0; msg[2] = 0x00; //Length
+	msg[3] = 0x35; msg[4] = 0x84;  //SNP Register Service
+	SetFCS(msg); //See if function has to be modified to be 0 if size is 0 ???
+  /*
+	const uint8_t NPI_Register[] = {   
+  SOF,0x00,0x00,  // length = 0
+  0x35,0x84,      // SNP Register Service
+  0x00};          // FCS (calculated by AP_SendMessageResponse)
+	*/
 }
 //*************Lab6_RegisterService**************
 // Register a service, used in Lab 6
 // Inputs none
 // Output APOK if successful,
 //        APFAIL if SNP failure
-int Lab6_RegisterService(void){ int r; uint8_t sendMsg[8];
+int Lab6_RegisterService(void){ 
+	int r; 
+	uint8_t sendMsg[8]; //AleGaa: was NPI_Register ???
   OutString("\n\rRegister service");
   BuildRegisterServiceMsg(sendMsg);
   r = AP_SendMessageResponse(sendMsg,RecvBuf,RECVSIZE);
