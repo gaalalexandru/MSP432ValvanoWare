@@ -20,10 +20,10 @@ void static runsleep(void);
 #define NUMPERIODIC 2        // maximum number of periodic threads
 #define STACKSIZE   100      // number of 32-bit words in stack per thread
 struct tcb{
-  int32_t *sp;      // pointer to stack (valid for threads not running
-  struct tcb *next; // linked-list pointer
+	int32_t *sp;      // pointer to stack (valid for threads not running
+	struct tcb *next; // linked-list pointer
 	int32_t *blocked;	// pointer to blocked semaphore, nonzero if blocked on this semaphore
-	int32_t sleep;		// time to sleep, nonzero if this thread is sleeping
+	int32_t sleep;	// time to sleep, nonzero if this thread is sleeping
 };
 typedef struct tcb tcbType;
 tcbType tcbs[NUMTHREADS];
@@ -54,6 +54,7 @@ void OS_Init(void){
 }
 
 void SetInitialStack(int i){
+// **Same as Lab 2****
 	//first set for each stack the stack pointer
 	tcbs[i].sp = &Stacks[i][STACKSIZE-16];	//Thread Stack Pointer	R13 = SP
 	//fill in bottom positions of the stack with register values, as if thread was already running and interrupted
@@ -69,10 +70,10 @@ void SetInitialStack(int i){
 	Stacks[i][STACKSIZE-10] = 0x10101010; //R10
 	Stacks[i][STACKSIZE-12] = 0x09090909; //R9
 	Stacks[i][STACKSIZE-13] = 0x08080808; //R8
-  Stacks[i][STACKSIZE-13] = 0x07070707; //R7
-  Stacks[i][STACKSIZE-14] = 0x06060606; //R6
-  Stacks[i][STACKSIZE-15] = 0x05050505; //R5
-  Stacks[i][STACKSIZE-16] = 0x04040404; //R4	
+	Stacks[i][STACKSIZE-13] = 0x07070707; //R7
+	Stacks[i][STACKSIZE-14] = 0x06060606; //R6
+	Stacks[i][STACKSIZE-15] = 0x05050505; //R5
+	Stacks[i][STACKSIZE-16] = 0x04040404; //R4	
 }
 
 //******** OS_AddThreads ***************
@@ -80,7 +81,7 @@ void SetInitialStack(int i){
 // Inputs: function pointers to six void/void main threads
 // Outputs: 1 if successful, 0 if this thread can not be added
 // This function will only be called once, after OS_Init and before OS_Launch
-int OS_AddThreads(void(*thread0)(void),
+int OS_AddThreads(void(*thread0)(void), // **similar to Lab 2. initialize as not blocked, not sleeping****
                   void(*thread1)(void),
                   void(*thread2)(void),
                   void(*thread3)(void),
@@ -117,8 +118,6 @@ int OS_AddThreads(void(*thread0)(void),
 	Stacks[4][STACKSIZE-2] = (int32_t)(thread4);	//Set address of thread4 as PC
 	SetInitialStack(5);	//SetInitialStack initial stack of main thread 5
 	Stacks[5][STACKSIZE-2] = (int32_t)(thread5);	//Set address of thread5 as PC	
-  
-
 	
 	EndCritical(sr);	//Enable Interrupts
 	return 1;         // successful
@@ -143,7 +142,7 @@ int OS_AddPeriodicEventThread(void(*thread)(void), uint32_t period){
 	PerTask[event_number].period = period;
 	PerTask[event_number].counter = 1;
 	event_number++;
-  return 1;
+	return 1;
 }
 
 void static runperiodicevents(void){
