@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Lab6.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Lab6.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Wed Dec 07 01:07:27 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Wed Dec 07 11:32:06 2016
 <BR><P>
 <H3>Maximum Stack Usage =        208 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -562,12 +562,12 @@ Global Symbols
 <P><STRONG><a name="[68]"></a>AP_GetSize</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, ap.o(i.AP_GetSize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = AP_GetSize
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_SendMessage
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_EchoSendMessage
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_EchoReceived
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCS
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 
 <P><STRONG><a name="[6b]"></a>AP_Init</STRONG> (Thumb, 180 bytes, Stack size 16 bytes, ap.o(i.AP_Init))
@@ -1043,19 +1043,19 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lab6.o(i.Bluetooth_Init)
 </UL>
-<P><STRONG><a name="[c5]"></a>BuildAddCharDescriptorMsg</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, ap_lab6.o(i.BuildAddCharDescriptorMsg))
-<BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharDescriptorMsg
+<P><STRONG><a name="[c7]"></a>BuildAddCharDescriptorMsg</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, ap_lab6.o(i.BuildAddCharDescriptorMsg))
+<BR><BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharDescriptorMsg
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6_AddCharacteristic
 </UL>
 
-<P><STRONG><a name="[c9]"></a>BuildAddCharValueMsg</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, ap_lab6.o(i.BuildAddCharValueMsg))
-<BR><BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
+<P><STRONG><a name="[cb]"></a>BuildAddCharValueMsg</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, ap_lab6.o(i.BuildAddCharValueMsg))
+<BR><BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6_AddNotifyCharacteristic
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6_AddCharacteristic
 </UL>
 
-<P><STRONG><a name="[cb]"></a>BuildAddNotifyCharDescriptorMsg</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, ap_lab6.o(i.BuildAddNotifyCharDescriptorMsg))
-<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddNotifyCharDescriptorMsg
+<P><STRONG><a name="[cd]"></a>BuildAddNotifyCharDescriptorMsg</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, ap_lab6.o(i.BuildAddNotifyCharDescriptorMsg))
+<BR><BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddNotifyCharDescriptorMsg
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6_AddNotifyCharacteristic
 </UL>
 
@@ -1064,7 +1064,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6_AddService
 </UL>
 
@@ -1073,7 +1073,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetStatusMsg
+<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetStatusMsg
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6_GetStatus
 </UL>
 
@@ -1082,7 +1082,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetVersionMsg
+<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetVersionMsg
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6_GetVersion
 </UL>
 
@@ -1091,22 +1091,30 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeRegisterServiceMsg
+<BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeRegisterServiceMsg
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6_RegisterService
 </UL>
 
-<P><STRONG><a name="[d1]"></a>BuildSetAdvertisementData1Msg</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, ap_lab6.o(i.BuildSetAdvertisementData1Msg))
-<BR><BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementData1Msg
+<P><STRONG><a name="[b2]"></a>BuildSetAdvertisementData1Msg</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, ap_lab6.o(i.BuildSetAdvertisementData1Msg))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = BuildSetAdvertisementData1Msg &rArr; SetFCS &rArr; AP_GetSize
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCS
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementData1Msg
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6_StartAdvertisement
 </UL>
 
-<P><STRONG><a name="[d3]"></a>BuildSetAdvertisementDataMsg</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, ap_lab6.o(i.BuildSetAdvertisementDataMsg))
-<BR><BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsgold
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
+<P><STRONG><a name="[b3]"></a>BuildSetAdvertisementDataMsg</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, ap_lab6.o(i.BuildSetAdvertisementDataMsg))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = BuildSetAdvertisementDataMsg &rArr; SetFCS &rArr; AP_GetSize
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCS
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsgold
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6_StartAdvertisement
 </UL>
 
-<P><STRONG><a name="[b2]"></a>BuildSetDeviceNameMsg</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, ap_lab6.o(i.BuildSetDeviceNameMsg))
+<P><STRONG><a name="[b4]"></a>BuildSetDeviceNameMsg</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, ap_lab6.o(i.BuildSetDeviceNameMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = BuildSetDeviceNameMsg &rArr; SetFCS &rArr; AP_GetSize
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCS
@@ -1131,7 +1139,7 @@ Global Symbols
 <P><STRONG><a name="[1f]"></a>EUSCIA2_IRQHandler</STRONG> (Thumb, 26 bytes, Stack size 4 bytes, uart1.o(i.EUSCIA2_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = EUSCIA2_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RxFifo_Put
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RxFifo_Put
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_msp432p401r_uvision.o(RESET)
 </UL>
@@ -1139,7 +1147,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_Init
 </UL>
 
-<P><STRONG><a name="[c6]"></a>Lab6OutCheck</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, texas.o(i.Lab6OutCheck))
+<P><STRONG><a name="[c8]"></a>Lab6OutCheck</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, texas.o(i.Lab6OutCheck))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = Lab6OutCheck &rArr; UART0_OutUHex2 &rArr; outnibble
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutUHex2
@@ -1150,23 +1158,23 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeStartAdvertisementMsg
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetDeviceNameMsg
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsgold
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementData1Msg
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeRegisterServiceMsg
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetVersionMsg
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetStatusMsg
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddNotifyCharDescriptorMsg
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharDescriptorMsg
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementData1Msg
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeRegisterServiceMsg
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetVersionMsg
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetStatusMsg
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddNotifyCharDescriptorMsg
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharDescriptorMsg
 </UL>
 
 <P><STRONG><a name="[a5]"></a>Lab6_AddCharacteristic</STRONG> (Thumb, 228 bytes, Stack size 72 bytes, ap_lab6.o(i.Lab6_AddCharacteristic))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = Lab6_AddCharacteristic &rArr; AP_SendMessageResponse &rArr; AP_RecvMessage &rArr; UART1_InChar
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_SendMessageResponse
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddCharValueMsg
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddCharDescriptorMsg
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddCharValueMsg
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddCharDescriptorMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bluetooth_Init
@@ -1176,8 +1184,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = Lab6_AddNotifyCharacteristic &rArr; AP_SendMessageResponse &rArr; AP_RecvMessage &rArr; UART1_InChar
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_SendMessageResponse
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddNotifyCharDescriptorMsg
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddCharValueMsg
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddNotifyCharDescriptorMsg
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddCharValueMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bluetooth_Init
@@ -1228,9 +1236,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_SendMessageResponse
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildStartAdvertisementMsg
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetDeviceNameMsg
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementDataMsg
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementData1Msg
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetDeviceNameMsg
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementDataMsg
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementData1Msg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bluetooth_Init
@@ -1385,7 +1393,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Init
 </UL>
 
-<P><STRONG><a name="[b3]"></a>RxFifo_Put</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, uart1.o(i.RxFifo_Put))
+<P><STRONG><a name="[b5]"></a>RxFifo_Put</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, uart1.o(i.RxFifo_Put))
 <BR><BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EUSCIA2_IRQHandler
 </UL>
 
@@ -1398,7 +1406,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_GetSize
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetDeviceNameMsg
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetDeviceNameMsg
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementDataMsg
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementData1Msg
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildRegisterServiceMsg
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildGetVersionMsg
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildGetStatusMsg
@@ -1446,15 +1456,15 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeStartAdvertisementMsg
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetDeviceNameMsg
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementData1Msg
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeRegisterServiceMsg
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetVersionMsg
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetStatusMsg
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddNotifyCharDescriptorMsg
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharDescriptorMsg
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementData1Msg
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeRegisterServiceMsg
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetVersionMsg
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetStatusMsg
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddNotifyCharDescriptorMsg
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharDescriptorMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_Init
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Time_Init
@@ -1644,7 +1654,7 @@ Global Symbols
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_EchoReceived
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutUHex
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 
 <P><STRONG><a name="[64]"></a>UART0_OutString</STRONG> (Thumb, 24 bytes, Stack size 4 bytes, uart0.o(i.UART0_OutString))
@@ -1655,15 +1665,15 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeStartAdvertisementMsg
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetDeviceNameMsg
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsgold
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementData1Msg
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeRegisterServiceMsg
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetVersionMsg
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetStatusMsg
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddNotifyCharDescriptorMsg
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharDescriptorMsg
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementData1Msg
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeRegisterServiceMsg
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetVersionMsg
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetStatusMsg
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddNotifyCharDescriptorMsg
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharDescriptorMsg
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_EchoSendMessage
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_EchoReceived
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
@@ -1680,7 +1690,7 @@ Global Symbols
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_BackgroundProcess
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OutValue
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bluetooth_Init
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 
 <P><STRONG><a name="[ed]"></a>UART0_OutUDec</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, uart0.o(i.UART0_OutUDec))
@@ -1713,7 +1723,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_EchoSendMessage
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_EchoReceived
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 
 <P><STRONG><a name="[74]"></a>UART1_FinishOutput</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, uart1.o(i.UART1_FinishOutput))
@@ -1799,7 +1809,7 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[b4]"></a>I2C_Recv2</STRONG> (Thumb, 184 bytes, Stack size 16 bytes, bsp.o(i.I2C_Recv2))
+<P><STRONG><a name="[b6]"></a>I2C_Recv2</STRONG> (Thumb, 184 bytes, Stack size 16 bytes, bsp.o(i.I2C_Recv2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = I2C_Recv2
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2cinit
@@ -1809,7 +1819,7 @@ Local Symbols
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lightsensorend
 </UL>
 
-<P><STRONG><a name="[b5]"></a>I2C_Send1</STRONG> (Thumb, 154 bytes, Stack size 16 bytes, bsp.o(i.I2C_Send1))
+<P><STRONG><a name="[b7]"></a>I2C_Send1</STRONG> (Thumb, 154 bytes, Stack size 16 bytes, bsp.o(i.I2C_Send1))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = I2C_Send1
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2cinit
@@ -1818,7 +1828,7 @@ Local Symbols
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lightsensorend
 </UL>
 
-<P><STRONG><a name="[b6]"></a>I2C_Send3</STRONG> (Thumb, 262 bytes, Stack size 24 bytes, bsp.o(i.I2C_Send3))
+<P><STRONG><a name="[b8]"></a>I2C_Send3</STRONG> (Thumb, 262 bytes, Stack size 24 bytes, bsp.o(i.I2C_Send3))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = I2C_Send3
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2cinit
@@ -1892,17 +1902,17 @@ Local Symbols
 <P><STRONG><a name="[92]"></a>i2cinit</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, bsp.o(i.i2cinit))
 <BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_TempSensor_Init
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LightSensor_Init
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send3
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send1
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Recv2
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send3
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send1
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Recv2
 </UL>
 
 <P><STRONG><a name="[90]"></a>lightsensorend</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, bsp.o(i.lightsensorend))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = lightsensorend &rArr; I2C_Send3
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send3
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send1
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Recv2
+<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send3
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send1
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Recv2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LightSensor_End
 </UL>
@@ -1910,8 +1920,8 @@ Local Symbols
 <P><STRONG><a name="[8f]"></a>lightsensorstart</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, bsp.o(i.lightsensorstart))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = lightsensorstart &rArr; I2C_Send3
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send3
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Recv2
+<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send3
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Recv2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LightSensor_Start
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LightSensor_End
@@ -1942,8 +1952,8 @@ Local Symbols
 <P><STRONG><a name="[9c]"></a>tempsensorend</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, bsp.o(i.tempsensorend))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = tempsensorend &rArr; I2C_Send1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send1
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Recv2
+<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send1
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Recv2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_TempSensor_End
 </UL>
@@ -1951,7 +1961,7 @@ Local Symbols
 <P><STRONG><a name="[9b]"></a>tempsensorstart</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, bsp.o(i.tempsensorstart))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = tempsensorstart &rArr; I2C_Send3
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send3
+<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Send3
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_TempSensor_Start
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_TempSensor_End
@@ -1987,222 +1997,222 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetGrade
 </UL>
 
-<P><STRONG><a name="[b7]"></a>Lab6BuildAddCharDescriptorMsgSolution</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildAddCharDescriptorMsgSolution))
+<P><STRONG><a name="[b9]"></a>Lab6BuildAddCharDescriptorMsgSolution</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildAddCharDescriptorMsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6BuildAddCharDescriptorMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharDescriptorMsg
+<BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharDescriptorMsg
 </UL>
 
-<P><STRONG><a name="[b9]"></a>Lab6BuildAddCharValueMsgSolution</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, texas.o(i.Lab6BuildAddCharValueMsgSolution))
+<P><STRONG><a name="[bb]"></a>Lab6BuildAddCharValueMsgSolution</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, texas.o(i.Lab6BuildAddCharValueMsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Lab6BuildAddCharValueMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
 </UL>
 
-<P><STRONG><a name="[ba]"></a>Lab6BuildAddNotifyCharDescriptorMsgSolution</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildAddNotifyCharDescriptorMsgSolution))
+<P><STRONG><a name="[bc]"></a>Lab6BuildAddNotifyCharDescriptorMsgSolution</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildAddNotifyCharDescriptorMsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6BuildAddNotifyCharDescriptorMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddNotifyCharDescriptorMsg
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddNotifyCharDescriptorMsg
 </UL>
 
-<P><STRONG><a name="[bb]"></a>Lab6BuildAddServiceMsgSolution</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildAddServiceMsgSolution))
+<P><STRONG><a name="[bd]"></a>Lab6BuildAddServiceMsgSolution</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildAddServiceMsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6BuildAddServiceMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
 </UL>
 
-<P><STRONG><a name="[bc]"></a>Lab6BuildGetStatusMsgSolution</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, texas.o(i.Lab6BuildGetStatusMsgSolution))
+<P><STRONG><a name="[be]"></a>Lab6BuildGetStatusMsgSolution</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, texas.o(i.Lab6BuildGetStatusMsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Lab6BuildGetStatusMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetStatusMsg
+<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetStatusMsg
 </UL>
 
-<P><STRONG><a name="[bd]"></a>Lab6BuildGetVersionMsgSolution</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, texas.o(i.Lab6BuildGetVersionMsgSolution))
+<P><STRONG><a name="[bf]"></a>Lab6BuildGetVersionMsgSolution</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, texas.o(i.Lab6BuildGetVersionMsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Lab6BuildGetVersionMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetVersionMsg
+<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeGetVersionMsg
 </UL>
 
-<P><STRONG><a name="[be]"></a>Lab6BuildRegisterServiceMsgSolution</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, texas.o(i.Lab6BuildRegisterServiceMsgSolution))
+<P><STRONG><a name="[c0]"></a>Lab6BuildRegisterServiceMsgSolution</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, texas.o(i.Lab6BuildRegisterServiceMsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Lab6BuildRegisterServiceMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeRegisterServiceMsg
+<BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeRegisterServiceMsg
 </UL>
 
-<P><STRONG><a name="[bf]"></a>Lab6BuildSetAdvertisementData1MsgSolution</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, texas.o(i.Lab6BuildSetAdvertisementData1MsgSolution))
+<P><STRONG><a name="[c1]"></a>Lab6BuildSetAdvertisementData1MsgSolution</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, texas.o(i.Lab6BuildSetAdvertisementData1MsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Lab6BuildSetAdvertisementData1MsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementData1Msg
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementData1Msg
 </UL>
 
-<P><STRONG><a name="[c0]"></a>Lab6BuildSetAdvertisementDataMsgSolution</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildSetAdvertisementDataMsgSolution))
+<P><STRONG><a name="[c2]"></a>Lab6BuildSetAdvertisementDataMsgSolution</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildSetAdvertisementDataMsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6BuildSetAdvertisementDataMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
 </UL>
 
-<P><STRONG><a name="[c1]"></a>Lab6BuildSetAdvertisementDataMsgSolutionold</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildSetAdvertisementDataMsgSolutionold))
+<P><STRONG><a name="[c3]"></a>Lab6BuildSetAdvertisementDataMsgSolutionold</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildSetAdvertisementDataMsgSolutionold))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6BuildSetAdvertisementDataMsgSolutionold &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsgold
 </UL>
 
-<P><STRONG><a name="[c2]"></a>Lab6BuildSetDeviceNameMsgSolution</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildSetDeviceNameMsgSolution))
+<P><STRONG><a name="[c4]"></a>Lab6BuildSetDeviceNameMsgSolution</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildSetDeviceNameMsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6BuildSetDeviceNameMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetDeviceNameMsg
 </UL>
 
-<P><STRONG><a name="[c3]"></a>Lab6BuildStartAdvertisementMsgSolution</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildStartAdvertisementMsgSolution))
+<P><STRONG><a name="[c5]"></a>Lab6BuildStartAdvertisementMsgSolution</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, texas.o(i.Lab6BuildStartAdvertisementMsgSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6BuildStartAdvertisementMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFCSSolution
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeStartAdvertisementMsg
 </UL>
 
-<P><STRONG><a name="[c4]"></a>Lab6GradeAddCharDescriptorMsg</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeAddCharDescriptorMsg))
+<P><STRONG><a name="[c6]"></a>Lab6GradeAddCharDescriptorMsg</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeAddCharDescriptorMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Lab6GradeAddCharDescriptorMsg &rArr; Lab6BuildAddCharDescriptorMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddCharDescriptorMsgSolution
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddCharDescriptorMsg
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddCharDescriptorMsgSolution
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddCharDescriptorMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[c7]"></a>Lab6GradeAddCharValueMsg</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, texas.o(i.Lab6GradeAddCharValueMsg))
+<P><STRONG><a name="[c9]"></a>Lab6GradeAddCharValueMsg</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, texas.o(i.Lab6GradeAddCharValueMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Lab6GradeAddCharValueMsg &rArr; Lab6BuildAddCharValueMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NextRandom
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddCharValueMsgSolution
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddCharValueMsg
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NextRandom
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddCharValueMsgSolution
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddCharValueMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[ca]"></a>Lab6GradeAddNotifyCharDescriptorMsg</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeAddNotifyCharDescriptorMsg))
+<P><STRONG><a name="[cc]"></a>Lab6GradeAddNotifyCharDescriptorMsg</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeAddNotifyCharDescriptorMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Lab6GradeAddNotifyCharDescriptorMsg &rArr; Lab6BuildAddNotifyCharDescriptorMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddNotifyCharDescriptorMsgSolution
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddNotifyCharDescriptorMsg
+<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddNotifyCharDescriptorMsgSolution
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddNotifyCharDescriptorMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[cc]"></a>Lab6GradeAddServiceMsg</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, texas.o(i.Lab6GradeAddServiceMsg))
+<P><STRONG><a name="[ce]"></a>Lab6GradeAddServiceMsg</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, texas.o(i.Lab6GradeAddServiceMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Lab6GradeAddServiceMsg &rArr; Lab6BuildAddServiceMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NextRandom
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddServiceMsgSolution
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NextRandom
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddServiceMsgSolution
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildAddServiceMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[cd]"></a>Lab6GradeGetStatusMsg</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeGetStatusMsg))
+<P><STRONG><a name="[cf]"></a>Lab6GradeGetStatusMsg</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeGetStatusMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6GradeGetStatusMsg &rArr; Lab6BuildGetStatusMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildGetStatusMsgSolution
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildGetStatusMsgSolution
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildGetStatusMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[ce]"></a>Lab6GradeGetVersionMsg</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeGetVersionMsg))
+<P><STRONG><a name="[d0]"></a>Lab6GradeGetVersionMsg</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeGetVersionMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6GradeGetVersionMsg &rArr; Lab6BuildGetVersionMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildGetVersionMsgSolution
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildGetVersionMsgSolution
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildGetVersionMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[cf]"></a>Lab6GradeRegisterServiceMsg</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeRegisterServiceMsg))
+<P><STRONG><a name="[d1]"></a>Lab6GradeRegisterServiceMsg</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeRegisterServiceMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6GradeRegisterServiceMsg &rArr; Lab6BuildRegisterServiceMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildRegisterServiceMsgSolution
+<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildRegisterServiceMsgSolution
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildRegisterServiceMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[d0]"></a>Lab6GradeSetAdvertisementData1Msg</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeSetAdvertisementData1Msg))
+<P><STRONG><a name="[d2]"></a>Lab6GradeSetAdvertisementData1Msg</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeSetAdvertisementData1Msg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lab6GradeSetAdvertisementData1Msg &rArr; Lab6BuildSetAdvertisementData1MsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementData1MsgSolution
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementData1Msg
+<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementData1MsgSolution
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementData1Msg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[d2]"></a>Lab6GradeSetAdvertisementDataMsg</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeSetAdvertisementDataMsg))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Lab6GradeSetAdvertisementDataMsg &rArr; Lab6GradeSetAdvertisementDataMsgold &rArr; Lab6BuildSetAdvertisementDataMsgSolutionold &rArr; SetFCSSolution &rArr; AP_GetSize
+<P><STRONG><a name="[d3]"></a>Lab6GradeSetAdvertisementDataMsg</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeSetAdvertisementDataMsg))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Lab6GradeSetAdvertisementDataMsg &rArr; Lab6GradeSetAdvertisementDataMsgold &rArr; BuildSetAdvertisementDataMsg &rArr; SetFCS &rArr; AP_GetSize
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsgold
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementDataMsgSolution
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementDataMsg
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementDataMsgSolution
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementDataMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
 <P><STRONG><a name="[d4]"></a>Lab6GradeSetAdvertisementDataMsgold</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeSetAdvertisementDataMsgold))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Lab6GradeSetAdvertisementDataMsgold &rArr; Lab6BuildSetAdvertisementDataMsgSolutionold &rArr; SetFCSSolution &rArr; AP_GetSize
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Lab6GradeSetAdvertisementDataMsgold &rArr; BuildSetAdvertisementDataMsg &rArr; SetFCS &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementDataMsgSolutionold
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementDataMsg
+<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementDataMsgSolutionold
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetAdvertisementDataMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeSetAdvertisementDataMsg
 </UL>
 
 <P><STRONG><a name="[d5]"></a>Lab6GradeSetDeviceNameMsg</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, texas.o(i.Lab6GradeSetDeviceNameMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Lab6GradeSetDeviceNameMsg &rArr; Lab6BuildSetDeviceNameMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetDeviceNameMsgSolution
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetDeviceNameMsg
+<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetDeviceNameMsgSolution
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildSetDeviceNameMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
@@ -2210,38 +2220,38 @@ Local Symbols
 <P><STRONG><a name="[d6]"></a>Lab6GradeStartAdvertisementMsg</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, texas.o(i.Lab6GradeStartAdvertisementMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Lab6GradeStartAdvertisementMsg &rArr; Lab6BuildStartAdvertisementMsgSolution &rArr; SetFCSSolution &rArr; AP_GetSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NextRandom
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildStartAdvertisementMsgSolution
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NextRandom
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildStartAdvertisementMsgSolution
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BuildStartAdvertisementMsg
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_OutString
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6OutCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[c8]"></a>NextRandom</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, texas.o(i.NextRandom))
+<P><STRONG><a name="[ca]"></a>NextRandom</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, texas.o(i.NextRandom))
 <BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeStartAdvertisementMsg
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddServiceMsg
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6GradeAddCharValueMsg
 </UL>
 
-<P><STRONG><a name="[b8]"></a>SetFCSSolution</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, texas.o(i.SetFCSSolution))
+<P><STRONG><a name="[ba]"></a>SetFCSSolution</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, texas.o(i.SetFCSSolution))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SetFCSSolution &rArr; AP_GetSize
 </UL>
 <BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AP_GetSize
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildStartAdvertisementMsgSolution
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetDeviceNameMsgSolution
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementDataMsgSolutionold
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementDataMsgSolution
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementData1MsgSolution
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildRegisterServiceMsgSolution
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildGetVersionMsgSolution
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildGetStatusMsgSolution
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddServiceMsgSolution
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddNotifyCharDescriptorMsgSolution
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddCharValueMsgSolution
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddCharDescriptorMsgSolution
+<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildStartAdvertisementMsgSolution
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetDeviceNameMsgSolution
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementDataMsgSolutionold
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementDataMsgSolution
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildSetAdvertisementData1MsgSolution
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildRegisterServiceMsgSolution
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildGetVersionMsgSolution
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildGetStatusMsgSolution
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddServiceMsgSolution
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddNotifyCharDescriptorMsgSolution
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddCharValueMsgSolution
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lab6BuildAddCharDescriptorMsgSolution
 </UL>
 
 <P><STRONG><a name="[eb]"></a>SetGrade</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, texas.o(i.SetGrade))

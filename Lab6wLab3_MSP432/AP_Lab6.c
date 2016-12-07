@@ -369,7 +369,30 @@ void BuildSetAdvertisementData1Msg(uint8_t *msg){
 // TI_ST_KEY_DATA_ID
 // Key state=0
 //****You implement this function as part of Lab 6*****
-  
+  msg[0] = SOF;
+	msg[1] = 11; msg[2] = 0x00; //Length
+	msg[3] = 0x55; msg[4] = 0x43; //SNP Set Advertisement Data
+	msg[5] = 0x01;  //Not connected Advertisement Data
+	msg[6] = 0x02; msg[7] = 0x01; msg[8] = 0x06;  //GAP_ADTYPE_FLAGS,DISCOVERABLE | no BREDR
+	msg[9] = 0x06; msg[10] = 0xFF;  //length, manufacturer specific
+	msg[11] = 0x0D; msg[12] = 0x00;  //Texas Instruments Company ID = 0x000D
+	msg[13] = 0x03;  //TI_ST_DEVICE_ID
+	msg[14] = 0x00;  //TI_ST_KEY_DATA_ID
+	msg[15] = 0x00;  //Key state
+  SetFCS(msg);
+/*
+	const uint8_t NPI_SetAdvertisement1[] = {   
+0,1,2:  SOF,11,0x00,    // length = 11
+3,4:  0x55,0x43,      // SNP Set Advertisement Data
+5:  0x01,           // Not connected Advertisement Data
+6,7,8:  0x02,0x01,0x06, // GAP_ADTYPE_FLAGS,DISCOVERABLE | no BREDR
+9,10:  0x06,0xFF,      // length, manufacturer specific
+11,12:  0x0D ,0x00,     // Texas Instruments Company ID
+13:  0x03,           // TI_ST_DEVICE_ID
+14:  0x00,           // TI_ST_KEY_DATA_ID
+15:  0x00,           // Key state
+16:  0xEE};          // FCS (calculated by AP_SendMessageResponse)
+*/	
 }
 
 //*************BuildSetAdvertisementDataMsg**************
@@ -379,10 +402,51 @@ void BuildSetAdvertisementData1Msg(uint8_t *msg){
 // Output none
 // build the necessary NPI message for Scan Response Data
 void BuildSetAdvertisementDataMsg(char name[], uint8_t *msg){
+	uint8_t i,j;
 // for a hint see NPI_SetAdvertisementDataMsg in VerySimpleApplicationProcessor.c
 // for a hint see NPI_SetAdvertisementData in AP.c
 //****You implement this function as part of Lab 6*****
-  
+  msg[0] = SOF;
+	msg[1] = 27; msg[2] = 0x00; //Length
+	msg[3] = 0x55; msg[4] = 0x43; //SNP Set Advertisement Data
+	msg[5] = 0x00;  //Scan Response Data
+	msg[6] = 16; msg[7] = 0x09;  //length, type=LOCAL_NAME_COMPLETE  //AleGaa Check length
+	//Shape the World
+	while(name[i]){
+		msg[8+i] = name[i]; //Add string to message
+		i++;
+	}
+// connection interval range
+	j = 8+i+1;
+	msg[j] = 0x05; 	j++;  //length of this data
+	msg[j] = 0x12; 	j++;  //GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE
+	msg[j] = 0x50; 	j++;  //DEFAULT_DESIRED_MIN_CONN_INTERVAL
+	msg[j] = 0x00; 	j++;  //DEFAULT_DESIRED_MIN_CONN_INTERVAL	
+	msg[j] = 0x20; 	j++;  //DEFAULT_DESIRED_MAX_CONN_INTERVAL
+	msg[j] = 0x03; 	j++;  //DEFAULT_DESIRED_MAX_CONN_INTERVAL
+// Tx power level	
+	msg[j] = 0x02; 	j++;  //length of this data
+	msg[j] = 0x0A; 	j++;  //AP_ADTYPE_POWER_LEVEL
+	msg[j] = 0x00; 	j++;  //0dBm
+  SetFCS(msg);  
+/*
+uint8_t NPI_SetAdvertisementData[] = {   
+  SOF,31,0x00,    // length = 32
+  0x55,0x43,      // SNP Set Advertisement Data
+  0x00,           // Scan Response Data
+6,7:  20,0x09,        // length, type=LOCAL_NAME_COMPLETE
+  'S','h','a','p','e',' ','t','h','e',' ','W','o','r','l','d',' ','0','0','1',
+// connection interval range
+  0x05,           // length of this data
+  0x12,           // GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE
+  0x50,0x00,      // DEFAULT_DESIRED_MIN_CONN_INTERVAL
+  0x20,0x03,      // DEFAULT_DESIRED_MAX_CONN_INTERVAL
+// Tx power level
+  0x02,           // length of this data
+  0x0A,           // GAP_ADTYPE_POWER_LEVEL
+  0x00,           // 0dBm
+  0x77};          // FCS (calculated by AP_SendMessageResponse)
+*/
 }
 //*************BuildStartAdvertisementMsg**************
 // Create a Start Advertisement Data message, used in Lab 6
@@ -402,16 +466,22 @@ void BuildStartAdvertisementMsg(uint16_t interval, uint8_t *msg){
 // Input:  none
 // Output: APOK if successful,
 //         APFAIL if notification not configured, or if SNP failure
-int Lab6_StartAdvertisement(void){volatile int r; uint8_t sendMsg[32];
+int Lab6_StartAdvertisement(void){
+	volatile int r; 
+	uint8_t sendMsg[32];
+	
   OutString("\n\rSet Device name");
-  BuildSetDeviceNameMsg("Shape the World",sendMsg);
+  BuildSetDeviceNameMsg("Shape the World",sendMsg);  //AleGaa Done
   r =AP_SendMessageResponse(sendMsg,RecvBuf,RECVSIZE);
+	
   OutString("\n\rSetAdvertisement1");
-  BuildSetAdvertisementData1Msg(sendMsg);
+  BuildSetAdvertisementData1Msg(sendMsg);  //AleGaa Done
   r =AP_SendMessageResponse(sendMsg,RecvBuf,RECVSIZE);
+	
   OutString("\n\rSetAdvertisement Data");
   BuildSetAdvertisementDataMsg("Shape the World",sendMsg);
   r =AP_SendMessageResponse(sendMsg,RecvBuf,RECVSIZE);
+	
   OutString("\n\rStartAdvertisement");
   BuildStartAdvertisementMsg(100,sendMsg);
   r =AP_SendMessageResponse(sendMsg,RecvBuf,RECVSIZE);
