@@ -218,8 +218,27 @@ void BuildAddCharValueMsg(uint16_t uuid,
 // for a hint see NPI_AddCharValue in AP.c
 // for a hint see first half of AP_AddCharacteristic and first half of AP_AddNotifyCharacteristic
 //****You implement this function as part of Lab 6*****
-  
-    
+	msg[0] = SOF;
+	msg[1] = 0x08; msg[2] = 0x00;  //length = 8
+	msg[3] = 0x35; msg[4] = 0x82;  //SNP Add Characteristic Value Declaration
+	msg[5] = permission;  // 0=none,1=read,2=write, 3=Read+write, GATT Permission
+	msg[6] = properties; msg[7] = 0x00;  //2=read,8=write,0x0A=read+write,0x10=notify, GATT Properties
+	msg[8] = 0;  //RFU
+	msg[9] = 0x00; msg[10] = 0x02;  //Maximum length of the attribute value=512
+	msg[11] = uuid&0xFF;  //UUID
+	msg[12] = uuid>>8;  //UUID
+	SetFCS(msg); //See if function has to be modified to be 0 if size is 0 ???
+/*
+	uint8_t NPI_AddCharValue[] = {   
+  SOF,0x08,0x00,  // length = 8
+  0x35,0x82,      // SNP Add Characteristic Value Declaration
+  0x03,           // 0=none,1=read,2=write, 3=Read+write, GATT Permission
+  0x0A,0x00,      // 2=read,8=write,0x0A=read+write,0x10=notify, GATT Properties
+  0x00,           // RFU
+  0x00,0x02,      // Maximum length of the attribute value=512
+  0xF1,0xFF,      // UUID
+  0xBA};          // FCS (calculated by AP_SendMessageResponse)
+*/	
 }
 
 //*************BuildAddCharDescriptorMsg**************
@@ -234,8 +253,32 @@ void BuildAddCharDescriptorMsg(char name[], uint8_t *msg){
 // for a hint see NPI_AddCharDescriptor in AP.c
 // for a hint see second half of AP_AddCharacteristic
 //****You implement this function as part of Lab 6*****
-  
-  
+	uint8_t i=0;
+	msg[0] = SOF;
+	msg[1] = 6 + GetStringSize(name) + 1; msg[2] = 0x00;  //length = 6 + string + 1 end byte
+	msg[3] = 0x35; msg[4] = 0x83;  //SNP Add Characteristic Descriptor Declaration
+	msg[5] = 0x80;  //User Description String
+	msg[6] = 0x01;  //GATT Read Permissions
+	msg[7] = GetStringSize(name) + 1; msg[8] = 0x00;  //Maximum Possible length of the user description string
+	msg[9] = GetStringSize(name) + 1; msg[10] = 0x00;  //Initial length of the user description string
+ //Shape the World
+	while(name[i]){
+		msg[11+i] = name[i];  //Add string to message
+		i++;
+	} 
+	msg[11+i] = 0; //End of string
+	SetFCS(msg); //See if function has to be modified to be 0 if size is 0 ???
+/*
+	uint8_t NPI_AddCharDescriptor[] = {   
+  SOF,0x17,0x00,  // length determined at run time 6+string length
+  0x35,0x83,      // SNP Add Characteristic Descriptor Declaration
+  0x80,           // User Description String
+  0x01,           // GATT Read Permissions
+  0x11,0x00,      // Maximum Possible length of the user description string
+  0x11,0x00,      // Initial length of the user description string
+  'C','h','a','r','a','c','t','e','r','i','s','t','i','c',' ','0',0, // Initial user description string
+  0x0C,0,0,0};    // FCS (calculated by AP_SendMessageResponse)
+*/	
 }
 
 //*************Lab6_AddCharacteristic**************
@@ -291,8 +334,34 @@ void BuildAddNotifyCharDescriptorMsg(char name[], uint8_t *msg){
 // for a hint see NPI_AddCharDescriptor4 in VerySimpleApplicationProcessor.c
 // for a hint see second half of AP_AddNotifyCharacteristic
 //****You implement this function as part of Lab 6*****
-  
-  
+	uint8_t i=0;
+	msg[0] = SOF;
+	msg[1] = 7 + GetStringSize(name) + 1; msg[2] = 0x00;  //length = 6 + string + 1 end byte
+	msg[3] = 0x35; msg[4] = 0x83;  //SNP Add Characteristic Descriptor Declaration
+	msg[5] = 0x84;  //User Description String + CCCD
+	msg[6] = 0x03;  //CCCD parameters read+write
+  msg[7] = 0x01;  //GATT Read Permissions
+	msg[8] = GetStringSize(name) + 1; msg[9] = 0x00;  //Maximum Possible length of the user description string
+	msg[10] = GetStringSize(name) + 1; msg[11] = 0x00;  //Initial length of the user description string
+ //Shape the World
+	while(name[i]){
+		msg[12+i] = name[i];  //Add string to message
+		i++;
+	} 
+	msg[12+i] = 0;  //End of string
+	SetFCS(msg);  //See if function has to be modified to be 0 if size is 0 ???
+/*
+const uint8_t NPI_AddCharDescriptor4[] = {   
+  SOF,12,0x00,    // length = 12
+  0x35,0x83,      // SNP Add Characteristic Descriptor Declaration
+  0x84,           // User Description String+CCCD
+  0x03,           // CCCD parameters read+write
+  0x01,           // GATT Read Permissions
+  0x06,0x00,      // Maximum Possible length of the user description string
+  0x06,0x00,      // Initial length of the user description string
+  'C','o','u','n','t',0, // Initial user description string
+  0x0E};          // FCS (calculated by AP_SendMessageResponse)	
+*/
 }
   
 //*************Lab6_AddNotifyCharacteristic**************
@@ -470,7 +539,32 @@ void BuildStartAdvertisementMsg(uint16_t interval, uint8_t *msg){
 // for a hint see NPI_StartAdvertisementMsg in VerySimpleApplicationProcessor.c
 // for a hint see NPI_StartAdvertisement in AP.c
 //****You implement this function as part of Lab 6*****
-  
+	msg[0] = SOF;
+	msg[1] = 14; msg[2] = 0x00;  //length = 14
+	msg[3] = 0x55; msg[4] = 0x42;  //SNP Start Advertisement
+	msg[5] = 0x00;  //Connectable Undirected Advertisements
+	msg[6] = 0x00; msg[7] = 0x00;  //Advertise infinitely
+	msg[8] = (interval & 0xFF); msg[9] = (interval >> 8);  //Advertising Interval (100 * 0.625 ms=62.5ms)
+	msg[10] = 0x00;  //Filter Policy RFU
+	msg[11] = 0x00;  //Initiator Address Type RFU
+	msg[12] = 0x00;	msg[13] = 0x01;	msg[14] = 0x00;	msg[15] = 0x00;	msg[16] = 0x00;	msg[17] = 0xC5;  //RFU
+	msg[18] = 0x02;  //Advertising will restart with connectable advertising when a connection is terminated
+	SetFCS(msg);
+/*
+const uint8_t NPI_StartAdvertisement[] = {   
+  SOF,14,0x00,    // length = 14
+  0x55,0x42,      // SNP Start Advertisement
+  0x00,           // Connectable Undirected Advertisements
+	
+  0x00,0x00,      // Advertise infinitely.
+  0x64,0x00,      // Advertising Interval (100 * 0.625 ms=62.5ms)
+  0x00,           // Filter Policy RFU
+  0x00,           // Initiator Address Type RFU
+	
+  0x00,0x01,0x00,0x00,0x00,0xC5, // RFU
+  0x02,           // Advertising will restart with connectable advertising when a connection is terminated
+  0xBB};          // FCS (calculated by AP_SendMessageResponse)	
+*/
 }
 
 //*************Lab6_StartAdvertisement**************
